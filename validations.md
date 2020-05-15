@@ -26,7 +26,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
 | `type` | Type of VAT. One of `eu_vat` (EU VIES), `ch_vat` (Switzerland) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
-| `valid` | Boolean indicating whether the VAT number exists officially. If government services are down, the value will be `null` and re-checked automatically for you. |
+| `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT number contained in `query` is in a valid format. |
 | `vat_number` | VAT number extracted from your query without the country code. |
 
