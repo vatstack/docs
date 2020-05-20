@@ -24,7 +24,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
-| `type` | Type of VAT. One of `eu_vat` (EU VIES), `ch_vat` (Switzerland) or `no_vat` (Norway). |
+| `type` | Type of VAT. One of `au_gst` (Australia), `eu_vat` (EU VIES), `ch_vat` (Switzerland) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT number contained in `query` is in a valid format. |
@@ -45,7 +45,7 @@ curl -X POST https://api.vatstack.com/v1/validations \
 
 | Parameter | Description |
 | --- | --- |
-| `type` <small>optional</small> | Restrict validation to either `ch_vat`, `eu_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
+| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
 | `vat_id` <small>required</small> | VAT number that you want to validate. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
