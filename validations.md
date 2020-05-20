@@ -178,6 +178,39 @@ Validation object successfully retrieved.
 }
 ```
 
+## VAT Number Formats
+
+Vatstack currently validates VAT numbers in real-time for the following regions:
+
+- Australia (`au_gst`)
+- European Union (`eu_vat`)
+- Norway (`no_vat`)
+- Switzerland (`ch_vat`)
+
+If you have a specific requirement, we’re happy to integrate more government services. Below section explains how you can submit validation requests for each region.
+
+### Australia
+
+[Australia’s GST number format](https://abr.business.gov.au/Help/AbnFormat) is a 11 digit number formed from a 9 digit unique identifier and 2 leading check digits. The identifier is issued to all entities registered in the [Australian Business Register (ABR)](https://abr.business.gov.au/). It is therefore also known as the Australian Business Number (ABN). Example **51 824 753 556**.
+
+Provide an ABN to Vatstack by prefixing the number with ‘ABN’ in your request. Vatstack will then automatically check against the ABR whether the business is registered for GST. Our announcement has more information about [ABN validation](https://vatstack.com/articles/australian-business-number-abn-validation).
+
+### European Union (VIES)
+
+The [EU VAT number format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the EU member state, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
+
+### Norway
+
+Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. Example **999999999MVA**.
+
+Vatstack detects a Norwegian VAT number by its prefix ‘NO’ in your request and validate it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
+
+### Switzerland
+
+Swiss number formats are based on the Swiss UID. It starts with ‘CHE’, followed by 9 digits, and either ends with ‘MWST’, ‘TVA’ or ‘IVA’ depending on the part of Switzerland a business is registered in. Example **CHE-123.456.789 MWST**.
+
+Provide a VAT number with a ‘CHE’ prefix in your request, and Vatstack will automatically validate it against the official [UID Register](https://www.uid.admin.ch/Search.aspx?lang=en). Learn more about [Swiss VAT number validations](https://vatstack.com/articles/switzerland-vat-number-validation) in our announcement.
+
 ## Webhook Events
 
 Vatstack will proactively notify your server as soon as a validation request was successfully processed and a result obtained from official government services. This means that you don’t have to query our API anymore and can instead listen to webhook events.
