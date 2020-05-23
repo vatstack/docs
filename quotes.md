@@ -8,11 +8,11 @@ Our core resources for [rates](https://vatstack.com/docs/rates) and [validations
 
 For example, if your business is situated in Italy and your customer is also in Italy, the quoted price will always include a VAT because VAT is always charged when transactions occur within the same EU member state (even for business customers). The reverse-charge mechanism does not apply here. This is a tax rule that you would have had to implement yourself, but is now taken care of.
 
-The ideal way to use the quote object is to generate a new one whenever your visitor loads the checkout window in your frontend application. When your visitor does check out, you can pass the object’s unique identifier to your backend application for retrieval. You should therefore cache the object’s ID in your frontend application.
+The ideal way to use the quote object is to generate a new one at checkout. Once your visitor checks out, you can use the object’s unique identifier to charge the exact same amount that your visitor has been presented with earlier.
 
-This interchanging of data allows you to charge the exact same amount that your visitor has been presented with earlier. You don’t have to replicate the same business logic in the frontend and the backend anymore.
+You don’t have to replicate the same business logic in the frontend and the backend applications anymore. You can generate as many quotes as you like.
 
-> **Preventing abuse**: If you generate quote objects from your frontend application, you should perform logical tests of the object’s content before you proceed with the actual charge to prevent abuse. For example, compare the object’s amount with your product’s price. If a visitor gets hold of your API access key, she can create new quote objects herself.
+> **Preventing abuse**: If you generate quote objects from your frontend application, you should perform logical tests of the object’s content before you proceed with the actual charge to prevent abuse. For example, compare the object’s amount with your product’s price. If visitors get hold of your API access key, they can create new quote objects themselves.
 
 ## The Quote Object
 
