@@ -86,9 +86,16 @@ Validation request was accepted and will resume asynchronously.
 {
   "id": "5d9f548b5b407ab2b9d12623",
   "code": "MS_UNAVAILABLE",
+  "company_address": null,
+  "company_name": null,
+  "consultation_number": null,
+  "country_code": "IE",
   "query": "IE6388047V",
+  "type": "eu_vat",
   "valid": null,
   "valid_format": true,
+  "vat_number": null,
+  "requested": "2019-10-10T15:55:55.660Z",
   "created": "2019-10-10T15:55:55.661Z",
   "updated": "2019-10-10T15:55:55.661Z"
 }
