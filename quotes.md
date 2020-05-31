@@ -27,10 +27,12 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `country_name` | Corresponding English name of `country_code`. |
 | `created` | ISO date at which the object was created. |
 | `ip_address` | The same IP address coming from the `ip_address` body parameters, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided. |
-| `local_name` | Localized name of the VAT. |
+| `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU member state. |
 | `vat.amount` | VAT amount in cents. |
 | `vat.inclusive` | Specifies if the given `amount` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay. |
+| `vat.abbreviation` | Abbreviation of `vat.local_name`. |
+| `vat.local_name` | Localized name of the VAT. |
 | `vat.rate` | VAT rate applied for the calculation. If `member_state` is `false`, the value will be `0`. |
 | `vat.rate_type` | Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`. |
 | `updated` | ISO date at which the object was updated. |
@@ -90,8 +92,10 @@ Quote object successfully created. Example includes a populated [validation obje
     "updated": "2019-11-07T21:47:22.952Z"
   },
   "vat": {
+    "abbreviation": "VAT",
     "amount": 0,
     "inclusive": false,
+    "local_name": "Value Added Tax",
     "rate": 0,
     "rate_type": "reverse_charge"
   },
@@ -154,8 +158,10 @@ Quote objects successfully retrieved.
         "updated": "2019-11-07T21:47:22.952Z"
       },
       "vat": {
+        "abbreviation": "VAT",
         "amount": 0,
         "inclusive": false,
+        "local_name": "Value Added Tax",
         "rate": 0,
         "rate_type": "reverse_charge"
       },
@@ -210,8 +216,10 @@ Quote object successfully retrieved.
     "updated": "2019-11-07T21:47:22.952Z"
   },
   "vat": {
+    "abbreviation": "VAT",
     "amount": 0,
     "inclusive": false,
+    "local_name": "Value Added Tax",
     "rate": 0,
     "rate_type": "reverse_charge"
   },

@@ -15,7 +15,7 @@ Aside from retrieving VAT rates applicable to your customer, you can also obtain
 | `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `ip_address` | The same IP address coming from the `ip_address` query params, or the geolocated IP address if none was provided. |
-| `local_name` | Localized name of the VAT. |
+| `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU member state. |
 | `price.gross` | Gross amount in cents, after applying the applicable VAT rate. |
 | `price.net` | Net amount in cents, as requested in your query. |
@@ -23,6 +23,8 @@ Aside from retrieving VAT rates applicable to your customer, you can also obtain
 | `price.vat_rate` | VAT rate applied for the calculation. This can equal the `standard_rate` or the rate of the category as per your request. If `member_state` is `false`, this value will be `0`. |
 | `reduced_rates` | Array of reduced VAT rates in percent. |
 | `standard_rate` | Standard VAT rate in percent. |
+| `vat_abbreviation` | Abbreviation of `vat_local_name`. |
+| `vat_local_name` | Localized name of the VAT. |
 
 ## List All Rates
 
@@ -76,7 +78,9 @@ VAT rates successfully obtained with price object for 100 EUR.
         10,
         13
       ],
-      "standard_rate": 20
+      "standard_rate": 20,
+      "vat_abbreviation": "MwSt.",
+      "vat_local_name": "Mehrwertsteuer"
     },
     ...
   ],
@@ -133,6 +137,8 @@ VAT rate successfully obtained.
   "reduced_rates": [
     7
   ],
-  "standard_rate": 19
+  "standard_rate": 19,
+  "vat_abbreviation": "MwSt.",
+  "vat_local_name": "Mehrwertsteuer"
 }
 ```
