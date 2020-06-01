@@ -67,14 +67,14 @@ Quote object successfully created. Example includes a populated [validation obje
 ```
 {
   "id": "5dc490ea73c1ce2f69628900",
-  "abbreviation": "ALV nro",
+  "abbreviation": "VAT ID no.",
   "amount": 10000,
   "amount_total": 10000,
   "category": null,
   "country_code": "IE",
   "country_name": "Ireland",
   "ip_address": "92.251.255.11",
-  "local_name": "Arvonlisäveronumero",
+  "local_name": "Value added tax identification number",
   "member_state": true,
   "validation": {
     "id": "5dc490ea73c1ce2f69628901",
@@ -133,14 +133,14 @@ Quote objects successfully retrieved.
   "quotes": [
     {
       "id": "5dc490ea73c1ce2f69628900",
-      "abbreviation": "ALV nro",
+      "abbreviation": "VAT ID no.",
       "amount": 10000,
       "amount_total": 10000,
       "category": null,
       "country_code": "IE",
       "country_name": "Ireland",
       "ip_address": "92.251.255.11",
-      "local_name": "Arvonlisäveronumero",
+      "local_name": "Value added tax identification number",
       "member_state": true,
       "validation": {
         "id": "5dc490ea73c1ce2f69628901",
@@ -191,14 +191,14 @@ Quote object successfully retrieved.
 ```
 {
   "id": "5dc490ea73c1ce2f69628900",
-  "abbreviation": "ALV nro",
+  "abbreviation": "VAT ID no.",
   "amount": 10000,
   "amount_total": 10000,
   "category": null,
   "country_code": "IE",
   "country_name": "Ireland",
   "ip_address": "92.251.255.11",
-  "local_name": "Arvonlisäveronumero",
+  "local_name": "Value added tax identification number",
   "member_state": true,
   "validation": {
     "id": "5dc490ea73c1ce2f69628901",
