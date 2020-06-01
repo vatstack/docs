@@ -14,6 +14,7 @@ Aside from retrieving VAT rates applicable to your customer, you can also obtain
 | `categories` | Categories relevant for digital products. Supports `audiobook`, `ebook` and `eperiodical`. Default to `standard_rate` if your digital product category is not available or contact us. |
 | `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
+| `currency` | 3-letter ISO 4217 local currency code. |
 | `ip_address` | The same IP address coming from the `ip_address` query params, or the geolocated IP address if none was provided. |
 | `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU member state. |
@@ -66,6 +67,7 @@ VAT rates successfully obtained with price object for 100 EUR.
       },
       "country_code": "AT",
       "country_name": "Austria",
+      "currency": "EUR",
       "local_name": "Umsatzsteuer-Identifikationsnummer",
       "member_state": true,
       "price": {
@@ -125,6 +127,7 @@ VAT rate successfully obtained.
   },
   "country_code": "DE",
   "country_name": "Germany",
+  "currency": "EUR",
   "ip_address": "81.169.181.179",
   "local_name": "Umsatzsteuer-Identifikationsnummer",
   "member_state": true,
