@@ -208,7 +208,7 @@ The [EU VAT number format](https://ec.europa.eu/taxation_customs/vies/faq.html#i
 
 ### Norway
 
-Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. Example **999999999MVA**.
+Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. The organization number has 9 digits. Example **999999999MVA**.
 
 Vatstack detects a Norwegian VAT number by its prefix ‘NO’ in your request and validate it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
 
