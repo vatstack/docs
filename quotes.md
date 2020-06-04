@@ -30,7 +30,7 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU member state. |
 | `vat.amount` | VAT amount in cents. |
-| `vat.inclusive` | Specifies if the given `amount` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay. |
+| `vat.inclusive` | Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay. |
 | `vat.abbreviation` | Abbreviation of `vat.local_name`. |
 | `vat.local_name` | Localized name of the VAT. |
 | `vat.rate` | VAT rate applied for the calculation. If `member_state` is `false`, the value will be `0`. |
