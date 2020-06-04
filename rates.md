@@ -35,9 +35,11 @@ You can filter the results by a 2-letter ISO country code to only obtain the rat
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/rates \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Query Parameters
@@ -100,9 +102,11 @@ You can leave out the IP address in your query and Vatstack will automatically u
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/rates/geolocate \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Query Parameters

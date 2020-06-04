@@ -36,9 +36,11 @@ Creates a validation object.
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X POST https://api.vatstack.com/v1/validations \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Body Parameters
@@ -107,9 +109,11 @@ Retrieves all validation objects in order of creation, with the most recent appe
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/validations \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Query Parameters
@@ -158,9 +162,11 @@ Retrieves a validation object by the **:id** path parameter.
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/validations/:id \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response
@@ -200,7 +206,7 @@ If you have a specific requirement, we’re happy to integrate more government s
 
 [Australia’s GST number format](https://abr.business.gov.au/Help/AbnFormat) is a 11 digit number formed from a 9 digit unique identifier and 2 leading check digits. The identifier is issued to all entities registered in the [Australian Business Register (ABR)](https://abr.business.gov.au/). It is therefore also known as the Australian Business Number (ABN). Example **51 824 753 556**.
 
-Provide an ABN to Vatstack by prefixing the number with ‘ABN’ in your request. Vatstack will then automatically check against the ABR whether the business is registered for GST. Our announcement has more information about [ABN validation](https://vatstack.com/articles/australian-business-number-abn-validation).
+Validate an ABN with Vatstack by providing 11 digits in your request. Vatstack will then automatically check against the ABR whether the business is registered for GST. Our announcement has more information about [ABN validation](https://vatstack.com/articles/australian-business-number-abn-validation).
 
 ### European Union (VIES)
 
@@ -210,7 +216,7 @@ The [EU VAT number format](https://ec.europa.eu/taxation_customs/vies/faq.html#i
 
 Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. The organization number has 9 digits. Example **999999999MVA**.
 
-Vatstack detects a Norwegian VAT number by its prefix ‘NO’ in your request and validate it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
+Vatstack detects a Norwegian VAT number by its suffix ‘MVA’ in your request and validates it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
 
 ### Switzerland
 

@@ -1,23 +1,27 @@
 # Authentication
-The Vatstack API requires an API key to authenticate requests. API requests to any of the endpoints described here will fail without authentication.
-You can view and manage your unique API key in the [dashboard](https://dashboard.vatstack.com/). There are several ways to authenticate requests with your unique API key.
 
-## API Key in Query Parameters
+The Vatstack API requires a <span class="badge badge-success">Public Key</span> or a <span class="badge badge-warning">Secret Key</span> to authenticate requests. API requests to any of the endpoints described here will fail without authentication.
 
-Add your API key to every request by including `key` in the query params. When retrieving a list of your validations from the past, for example, your GET request could look like this:
+You can view and manage your [unique API keys in the dashboard](https://dashboard.vatstack.com/keys). There are two ways with which you can authenticate requests using the public key.
 
-```
-https://api.vatstack.com/v1/validations?key=8637070eccf71b29f0e859f1bd5d9257
-```
+## Public Key in Query Parameters
 
-You can see that the request URI quickly becomes illegible. You can alternatively supply your API key in your headers. See below for instructions.
-
-## API Key in Headers
-
-In your request’s headers, add a string to the `Authorization` key that containing the `Credential` method and your API key separated with a space. Example for your authorization header using a sample API key:
+Add your public key to every request by including `key` in the query params. When retrieving a list of your validations from the past, for example, your GET request could look like this:
 
 ```
-Authorization: 'Credential 8637070eccf71b29f0e859f1bd5d9257'
+https://api.vatstack.com/v1/validations?key=pk_6c46e7d65bc2caccdbf48f4a9c2fcba7
+```
+
+You can see that the request URI quickly becomes illegible. You can alternatively supply your public key in your headers. See below for instructions.
+
+## Public Key or Secret Key in Headers
+
+In your request’s headers, add a string to the `Authorization` key that containing the `Credential` method and your API key separated with a space. Example for your authorization header using a sample public key:
+
+```
+Authorization: 'Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
 ```
 
 This method can be convenient to globally declare an authorization header for your entire app. Supplying your API key in each query params will become redundant.
+
+Some endpoints require a secret key to protect your data from spoofing or from being manipulated. Our documentation will always mention which of the keys you can use to perform a request.

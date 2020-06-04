@@ -2,31 +2,47 @@
 
 Retrieve the number of hits you have used for the running month and the total capacity allocated to your current subscription plan.
 
+A hit is consumed for every successful request. For example, we count a [validation](https://vatstack.com/docs/validations) request if it did not run into an error. Invalid number formats **do not** count as a hit. This has changed from our previous version where we still counted every API request.
+
+The consumption is counted similarly with a [supply](https://vatstack.com/docs/supplies) request. Only successful object creations are counted. This also allows you to update a supply object without consuming an additional hit. Deleting an object will not reduce the consumed hits.
+
 ## The Hit Object
 
 | Key | Description |
 | --- | --- |
-| `available` | Hits remaining for the running month. |
-| `capacity` | Total capacity for the plan you’re subscribed to. |
-| `used` | Hits consumed during the running month. |
+| `supplies.available` | Supplies remaining for the running month. |
+| `supplies.capacity` | Included supplies in the plan you’re subscribed to. |
+| `supplies.used` | Supplies created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
+| `validations.available` | Validations remaining for the running month. |
+| `validations.capacity` | Included validations in the plan you’re subscribed to. |
+| `validations.used` | Validations created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
 
 ## Retrieve Hits
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 This endpoint can be useful if you want to perform a quick check against your hits count before initiating a VAT number validation request.
 
 ```
 curl -X GET https://api.vatstack.com/v1/hits \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response
 
 ```
 {
-  "available": 19,
-  "capacity": 100,
-  "used": 81
+  "supplies": {
+    "available": 19,
+    "capacity": 100,
+    "used": 81
+  },
+  "validations": {
+    "available": 378,
+    "capacity": 500,
+    "used": 122
+  }
 }
 ```

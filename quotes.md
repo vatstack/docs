@@ -1,6 +1,6 @@
 # Quotes
 
-Correct VAT treatment between you and your customer for every sale using your existing business information. Interchange cached checkout data between the frontend and backend applications.
+Correct VAT treatment between you and your customer for every sale of telecommunications, broadcasting and electronic (TBE) services. Interchange cached quotes between the frontend and backend applications.
 
 The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the **entire VAT-compliant business logic** for you. All VAT rules have been centralized so that every response is directly actionable.
 
@@ -26,7 +26,7 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `created` | ISO date at which the object was created. |
-| `ip_address` | The same IP address coming from the `ip_address` body parameters, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided. |
+| `ip_address` | The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided. |
 | `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU member state. |
 | `vat.amount` | VAT amount in cents. |
@@ -44,21 +44,23 @@ Creates a quote object.
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X POST https://api.vatstack.com/v1/quotes \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Body Parameters
 
 | Parameter | Description |
 | --- | --- |
-| `vat_inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. |
 | `amount` <small>required</small> | Amount **in cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues. |
-| `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
-| `ip_address` <small>optional</small> | IP address to geolocate the VAT rate for. If neither IP address nor `country_code` is provided, it will be automatically determined from the request. |
 | `country_code` <small>optional</small> | 2-letter ISO country code. If provided, the `ip_address` parameter will be ignored. |
 | `category` <small>optional</small> | Digital products category used for calculation. Supports `audiobook`, `ebook` and `eperiodical`. |
+| `ip_address` <small>optional</small> | IP address to geolocate the VAT rate for. If neither IP address nor `country_code` is provided, it will be automatically determined from the request. |
+| `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
+| `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
 
 ### Response
 
@@ -110,9 +112,11 @@ Retrieves all quote objects in order of creation, with the most recent appearing
 
 ### Request
 
+Authorize with <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/quotes \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -179,9 +183,11 @@ Retrieves a quote object by the **:id** path parameter.
 
 ### Request
 
+Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+
 ```
 curl -X GET https://api.vatstack.com/v1/quotes/:id \
-     -H "Authorization: Credential 8637070eccf71b29f0e859f1bd5d9257" \
+     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response

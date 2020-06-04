@@ -12,11 +12,11 @@ Using the POST method, you can perform requests and retrieve data using the GET 
 
 ## API Specifications
 
-### Unique API Access Key
+### Unique API Keys
 
-A unique API key is assigned to you during registration. It is your gateway to interact with Vatstack’s API endpoints. Use your key to authenticate all your requests using one of the [two authentication methods](https://vatstack.com/docs/authentication).
+A unique public key and a unique secret key are assigned to you during registration. It is your gateway to interact with Vatstack’s API endpoints. Use your keys to authenticate all your requests using one of the [two documented authentication methods](https://vatstack.com/docs/authentication).
 
-The key can be reset anytime from within your dashboard. This can be useful in the event that your key has been compromised. Please mind that resetting a key can break your application if it is not updated there at the same time.
+The keys can be rolled to a newly generated one from within your dashboard. This can be useful in the event that one of your keys has been compromised. Please mind that resetting a key can break your application if it is not updated there at the same time. You can choose a rolling period to transition without disruption.
 
 ### Sample API Response
 
