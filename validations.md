@@ -48,7 +48,7 @@ curl -X POST https://api.vatstack.com/v1/validations \
 | Parameter | Description |
 | --- | --- |
 | `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
-| `vat_id` <small>required</small> | VAT number that you want to validate. |
+| `query` <small>required</small> | VAT number that you want to validate. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
 
