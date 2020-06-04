@@ -100,13 +100,13 @@ curl -X GET https://api.vatstack.com/v1/batches \
 
 ### Response
 
-Schedule objects successfully retrieved. Example includes one valid query and one invalid query.
+Batch objects successfully retrieved. Example includes one valid query and one invalid query.
 
 ```
 {
   "has_more": false,
-  "schedules_count": 5,
-  "schedules": [
+  "batches_count": 5,
+  "batches": [
     {
       "id": "5dae0611273f2a47db1acd27",
       "name": "Validations for November",
@@ -155,7 +155,7 @@ curl -X GET https://api.vatstack.com/v1/batches/:id \
 
 ### Response
 
-Schedule object successfully retrieved.
+Batch object successfully retrieved.
 
 ```
 {
@@ -218,7 +218,7 @@ Once you are ready to start the validation process, change the `status` to `sche
 
 ### Response
 
-Schedule object successfully updated.
+Batch object successfully updated.
 
 ```
 {
@@ -266,7 +266,7 @@ curl -X DELETE https://api.vatstack.com/v1/batches/:id \
 
 ### Response
 
-Schedule object successfully deleted.
+Batch object successfully deleted.
 
 ```
 {
