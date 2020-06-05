@@ -1,10 +1,10 @@
 # Getting Started
 
-Implement validation requests within minutes using the code samples for various programming environments outlined below.
+Implement quote requests within minutes using the code samples for various programming environments outlined below.
 
-Note that the API key in each code block must be replaced with the unique API access key found in your dashboard. You can find more details in the [authentication](https://vatstack.com/docs/authentication) reference.
+Note that the API key in each code block must be replaced with the unique public key found in your dashboard. You can find more details in the [authentication](https://vatstack.com/docs/authentication) reference.
 
-To obtain validation results, you send a POST request to our API endpoint. Use GET requests to retrieve historical validations you have performed in the past.
+To obtain quote results, you send a POST request to our API endpoint. Use GET requests to retrieve historical quotes you have performed in the past.
 
 ## Node.js
 
@@ -14,11 +14,11 @@ We will use [Axios](https://github.com/axios/axios) in order to perform requests
 const axios = require('axios')
 ​
 var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
-var vat_id = 'IE6388047V'
+var amount = 10000
 ​
-// Create a validation request via HTTP POST.
-axios.post('https://api.vatstack.com/v1/validations', {
-  vat_id: vat_id
+// Create a quote request via HTTP POST.
+axios.post('https://api.vatstack.com/v1/quotes', {
+  amount: amount
 }, {
   headers: { Authorization: `Credential ${ api_key }` }
 })
@@ -38,17 +38,17 @@ The best practice to perform API requests with PHP is with its built-in cURL.
 
 ```
 $api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7';
-$vat_id = 'IE6388047V';
+$amount = 10000;
 ​
 // Initialize CURL.
-$ch = curl_init('https://api.vatstack.com/v1/validations');
+$ch = curl_init('https://api.vatstack.com/v1/quotes');
 ​
 curl_setopt($ch, CURLOPT_FAILONERROR, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 ​
 // Add VAT number to body.
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'vat_id=' . $vat_id);
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'amount=' . $amount);
 ​
 // Add key to header array.
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Credential ' . $api_key]);
@@ -76,13 +76,13 @@ You have to link [jQuery](https://jquery.com/) either from a CDN or a self-hoste
 
 ```
 var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
-var vat_id = 'IE6388047V'
+var amount = 10000
 ​
 // Perform an AJAX POST request.
 $.ajax({
-  url: 'https://api.vatstack.com/v1/validations',
+  url: 'https://api.vatstack.com/v1/quotes',
   type: 'post',
-  data: { vat_id: vat_id },
+  data: { amount: amount },
   dataType: 'json',
   headers: { Authorization: `Credential ${ api_key }` },
   success: function(result) {
