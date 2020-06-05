@@ -1,6 +1,6 @@
 # Quotes
 
-Correct VAT treatment between you and your customer for every sale of telecommunications, broadcasting and electronic (TBE) services. Interchange cached quotes between the frontend and backend applications.
+To ensure that the correct country’s VAT rate is applied under the rules on telecommunications, broadcasting and electronic (TBE) services, it is fundamental that the place of supply is determined. Responsibility of determining the customer’s location falls to the supplier.
 
 The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the **entire VAT-compliant business logic** for you. All VAT rules have been centralized so that every response is directly actionable.
 

@@ -1,8 +1,6 @@
 # Evidences
 
-To ensure that the correct country’s VAT rate is applied under the rules on telecommunications, broadcasting and electronic (TBE) services, it is fundamental that the place of supply is determined.
-
-Responsibility of determining the customer’s location falls to the supplier. You must [collect two pieces of non-contradictory evidence](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32013R1042) that confirm your customer’s location and keep them on file for 10 years. Therefore measures must be put in place to capture the necessary information that will help to establish where the TBE service has been consumed.
+You must [collect two pieces of non-contradictory evidence](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32013R1042) that confirm your customer’s location and keep them on file for 10 years. Therefore measures must be put in place to capture the necessary information that will help to establish where the telecommunications, broadcasting and electronic (TBE) service has been consumed.
 
 If you’re a business in the EU with less than 100,000 EUR in cross-border sales of TBE annually, then you only need to [collect one piece of non-contradictory customer location evidence](https://ec.europa.eu/taxation_customs/business/vat/digital-single-market-modernising-vat-cross-border-ecommerce_en).
 
