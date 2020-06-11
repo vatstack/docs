@@ -17,11 +17,12 @@ You can create supply objects programmatically via this API endpoint. Integratio
 | `country_code` | 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`. |
 | `currency` | 3-letter ISO 4217 currency code used to charge the `amount`. |
 | `created` | ISO date at which the object was created. |
+| `description` | An arbitrary string to describe the supplied item. Often useful for displaying to users. |
 | `evidence` | Populated evidence object if an ID is attached. You can attach an evidence object with the `evidence` body parameter in the POST request. Defaults to `null`. See [evidence object](https://vatstack.com/docs/evidences) for reference. |
 | `evidence_status` | Status of whether the attached evidence object sufficiently proves the place of supply established in `country_code`. Will be either `sufficient` or `insufficient`. |
-| `invoice_number` | A custom field for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
-| `name` | A custom field for the name of the customer. |
-| `notes` | A custom field for additional notes. |
+| `invoice_number` | A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
+| `name` | A custom string for the name of the customer. |
+| `notes` | A custom string for additional notes. |
 | `updated` | ISO date at which the object was updated. |
 | `validation` | Populated validation object if an ID is attached. You can attach a validation object with the `validation` body parameter in the POST request. Defaults to `null`. See [validation object](https://vatstack.com/docs/validations) for reference. |
 | `vat.amount` | VAT amount in cents. |
@@ -50,11 +51,12 @@ curl -X POST https://api.vatstack.com/v1/supplies \
 | `amount_refunded` <small>optional</small> | Amount in cents refunded back to the customer. |
 | `country_code` <small>required</small> | 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`. |
 | `currency` <small>required</small> | 3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency. |
+| `description` <small>optional</small> | A custom string to describe the supplied item. |
 | `evidence` <small>optional</small> | Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`. |
-| `invoice_number` <small>required</small> | A custom field for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
+| `invoice_number` <small>required</small> | A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
 | `issued` <small>required</small> | ISO date at which the invoice was issued to the customer. |
-| `name` <small>optional</small> | A custom field for the name of the customer. |
-| `notes` <small>optional</small> | A custom field for additional notes. |
+| `name` <small>optional</small> | A custom string for the name of the customer. |
+| `notes` <small>optional</small> | A custom string for additional notes. |
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if the customer had validated a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
 | `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quotes object](https://vatstack.com/docs/quotes) during checkout. |
 
@@ -70,6 +72,7 @@ Supply object successfully created.
   "country_code": "IE",
   "created": "2020-06-04T21:53:37.326Z",
   "currency": "USD",
+  "description": null,
   "evidence": {
     "bank_address": {
       "name": "VISA",
@@ -149,6 +152,7 @@ Supply objects successfully retrieved.
       "country_code": "IE",
       "created": "2020-06-04T21:53:37.326Z",
       "currency": "USD",
+      "description": null,
       "evidence": {
         "bank_address": {
           "name": "VISA",
@@ -216,6 +220,7 @@ Supply object successfully retrieved.
   "country_code": "IE",
   "created": "2020-06-04T21:53:37.326Z",
   "currency": "USD",
+  "description": null,
   "evidence": {
     "bank_address": {
       "name": "VISA",
@@ -276,6 +281,7 @@ curl -X PUT https://api.vatstack.com/v1/supplies/:id \
 | `amount_refunded` <small>optional</small> | Amount in cents refunded back to the customer. |
 | `country_code` <small>required</small> | 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`. |
 | `currency` <small>required</small> | 3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency. |
+| `description` <small>optional</small> | A custom string to describe the supplied item. |
 | `evidence` <small>optional</small> | Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`. |
 | `invoice_number` <small>required</small> | A custom field for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
 | `issued` <small>required</small> | ISO date at which the invoice was issued to the customer. |
@@ -296,6 +302,7 @@ Supply object successfully updated.
   "country_code": "IE",
   "created": "2020-06-04T21:53:37.326Z",
   "currency": "USD",
+  "description": null,
   "evidence": {
     "bank_address": {
       "name": "VISA",
