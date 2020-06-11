@@ -8,7 +8,7 @@ EU businesses with less than 10,000 EUR in cross-border sales of TBE annually ca
 
 Our [EU VAT guide for digital subscription businesses](https://vatstack.com/articles/eu-vat-guide-for-digital-subscription-businesses) has more information about the thresholds.
 
-All evidence must be gathered from a third party, such as the bank or IP address, and not from the customer directly. After all, the customer could twist the facts to evade paying tax. Nevertheless, we let you store the customer’s billing address but encourage you to always store the bank’s address and IP address preferentially.
+All evidence must be gathered from a third party, such as the bank or IP address, and not from the customer directly. After all, the customer could twist the facts to evade paying tax. Nevertheless, we let you store the customer’s full billing address but encourage you to always store the bank’s address and IP address preferentially.
 
 The evidence object can be attached to a [supply object](https://vatstack.com/docs/supplies) and it can only be attached to one supply object at a time.
 
@@ -20,8 +20,11 @@ The evidence object can be attached to a [supply object](https://vatstack.com/do
 | `bank_address.name` | Name of the bank or payment source. |
 | `bank_address.country_code` | 2-letter ISO country code of the bank or payment source. |
 | `billing_address.city` | City of the customer’s billing address. |
-| `billing_address.state` | State of the customer’s billing address. |
 | `billing_address.country_code` | 2-letter ISO country code of the customer’s billing address. |
+| `billing_address.line_1` | Line 1 of the customer’s billing address. |
+| `billing_address.line_2` | Line 2 of the customer’s billing address. |
+| `billing_address.postal_code` | Postal code of the customer’s billing address. |
+| `billing_address.state` | State of the customer’s billing address. |
 | `created` | ISO date at which the object was created. |
 | `ip_address.label` | The same IP address coming from the `ip_address.label` body parameter which will be geolocated automatically. |
 | `ip_address.provider` | Provider used to geolocate `ip_address.label`. We use MaxMind&reg; GeoIP2 geolocation technology by default but have a number of fallback providers. |
@@ -51,8 +54,11 @@ curl -X POST https://api.vatstack.com/v1/evidences \
 | `bank_address.name` <small>optional</small> | Name of the bank or payment source used by the customer. This information is usually provided by your payments provider. |
 | `bank_address.country_code` <small>optional</small> | 2-letter ISO country code of the bank or payment source. This information is usually provided by your payments provider. |
 | `billing_address.city` <small>optional</small> | City of the customer’s billing address. |
-| `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `billing_address.country_code` <small>optional</small> | 2-letter ISO country code of the customer’s billing address. |
+| `billing_address.line_1` <small>optional</small> | Line 1 of the customer’s billing address. |
+| `billing_address.line_2` <small>optional</small> | Line 2 of the customer’s billing address. |
+| `billing_address.postal_code` <small>optional</small> | Postal code of the customer’s billing address. |
+| `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `ip_address.label` <small>optional</small> | IP address of the customer at the time of supply. We will automatically geolocate this IP address and hydrate the other fields. |
 
 ### Response
@@ -67,9 +73,12 @@ Evidence object successfully created.
     "country_code": "IE"
   },
   "billing_address": {
+    "line_1": null,
+    "line_2": null,
     "city": "East Wall",
-    "state": "Leinster",
     "country_code": "IE"
+    "postal_code": null,
+    "state": "Leinster",
   },
   "created": "2020-06-03T20:13:12.437Z",
   "ip_address": {
@@ -120,9 +129,12 @@ Evidence objects successfully retrieved.
         "country_code": "IE"
       },
       "billing_address": {
+        "line_1": null,
+        "line_2": null,
         "city": "East Wall",
-        "state": "Leinster",
         "country_code": "IE"
+        "postal_code": null,
+        "state": "Leinster",
       },
       "created": "2020-06-03T20:13:12.437Z",
       "ip_address": {
@@ -165,9 +177,12 @@ Evidence object successfully retrieved.
     "country_code": "IE"
   },
   "billing_address": {
+    "line_1": null,
+    "line_2": null,
     "city": "East Wall",
-    "state": "Leinster",
     "country_code": "IE"
+    "postal_code": null,
+    "state": "Leinster",
   },
   "created": "2020-06-03T20:13:12.437Z",
   "ip_address": {
@@ -202,8 +217,11 @@ curl -X PUT https://api.vatstack.com/v1/evidences/:id \
 | `bank_address.name` <small>optional</small> | Name of the bank or payment source used by the customer. This information is usually provided by your payments provider. |
 | `bank_address.country_code` <small>optional</small> | 2-letter ISO country code of the bank or payment source. This information is usually provided by your payments provider. |
 | `billing_address.city` <small>optional</small> | City of the customer’s billing address. |
-| `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `billing_address.country_code` <small>optional</small> | 2-letter ISO country code of the customer’s billing address. |
+| `billing_address.line_1` <small>optional</small> | Line 1 of the customer’s billing address. |
+| `billing_address.line_2` <small>optional</small> | Line 2 of the customer’s billing address. |
+| `billing_address.postal_code` <small>optional</small> | Postal code of the customer’s billing address. |
+| `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `ip_address.label` <small>optional</small> | IP address of the customer at the time of supply. We will automatically geolocate this IP address and hydrate the other fields. |
 
 ### Response
@@ -218,9 +236,12 @@ Evidence object successfully updated.
     "country_code": "IE"
   },
   "billing_address": {
+    "line_1": null,
+    "line_2": null,
     "city": "East Wall",
-    "state": "Leinster",
     "country_code": "IE"
+    "postal_code": null,
+    "state": "Leinster",
   },
   "created": "2020-06-03T20:13:12.437Z",
   "ip_address": {
