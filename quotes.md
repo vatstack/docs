@@ -12,7 +12,7 @@ The ideal way to use the quote object is to generate a new one at checkout. Once
 
 You don’t have to replicate the same business logic in the frontend and the backend applications anymore. You can generate as many quotes as you like.
 
-> **Preventing abuse**: If you generate quote objects from your frontend application, you should perform logical tests of the object’s content before you proceed with the actual charge to prevent abuse. For example, compare the object’s amount with your product’s price. If visitors get hold of your API access key, they can create new quote objects themselves.
+> **Preventing abuse**: If you generate quote objects from your frontend application, you should perform logical tests of the object’s content before you proceed with the actual charge to prevent abuse. For example, compare the object’s `amount` with your product’s price. If visitors get hold of your public key, they can create new quote objects themselves.
 
 ## The Quote Object
 
