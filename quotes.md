@@ -1,12 +1,12 @@
 # Quotes
 
-To ensure that the correct country’s VAT rate is applied under the rules on telecommunications, broadcasting and electronic (TBE) services, it is fundamental that the place of supply is determined. Responsibility of determining the customer’s location falls to the supplier.
+To ensure that the correct country’s VAT rate is applied under the rules for telecommunications, broadcasting and electronic (TBE) services, it is fundamental that the place of supply is determined. Responsibility for determining the customer’s location falls to the supplier.
 
 The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the **entire VAT-compliant business logic** for you. All VAT rules have been centralized so that every response is directly actionable.
 
 Our core resources for [rates](https://vatstack.com/docs/rates) and [validations](https://vatstack.com/docs/validations) are “cold” fetches because they are provided as is and you still have to research tax regulations that specifically apply to each sale. We consider responses from the quotes endpoints as “warm” fetches because they are **dynamically adapted to the circumstances between your business and your customer**.
 
-For example, if your business is situated in Italy and your customer is also in Italy, the quoted price will always include a VAT because VAT is always charged when transactions occur within the same EU member state (even for business customers). The reverse-charge mechanism does not apply here. This is a tax rule that you would have had to implement yourself, but is now taken care of.
+For example, if your business is situated in Italy and your customer is also in Italy, the quoted price will always include a VAT because VAT is always charged when transactions occur within the same EU member state (even for business customers). The reverse-charge mechanism does not apply here. This is a tax rule that you would have had to implement yourself, but is now taken care of by the API.
 
 The ideal way to use the quote object is to generate a new one at checkout. Once your visitor checks out, you can use the object’s unique identifier to charge the exact same amount that your visitor has been presented with earlier.
 

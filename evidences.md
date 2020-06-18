@@ -17,8 +17,8 @@ The evidence object can be attached to a [supply object](https://vatstack.com/do
 | Key | Description |
 | --- | --- |
 | `id` | Unique identifier for the object. |
-| `bank_address.name` | Name of the bank or payment source. |
 | `bank_address.country_code` | 2-letter ISO country code of the bank or payment source. |
+| `bank_address.name` | Name of the bank or payment source. |
 | `billing_address.city` | City of the customer’s billing address. |
 | `billing_address.country_code` | 2-letter ISO country code of the customer’s billing address. |
 | `billing_address.line_1` | Line 1 of the customer’s billing address. |
@@ -29,8 +29,8 @@ The evidence object can be attached to a [supply object](https://vatstack.com/do
 | `ip_address.label` | The same IP address coming from the `ip_address.label` body parameter which will be geolocated automatically. |
 | `ip_address.provider` | Provider used to geolocate `ip_address.label`. We use MaxMind&reg; GeoIP2 geolocation technology by default but have a number of fallback providers. |
 | `ip_address.city` | City of the geolocated IP address. |
-| `ip_address.state` | State of the geolocated IP address. |
 | `ip_address.country_code` | 2-letter ISO country code of the geolocated IP address. |
+| `ip_address.state` | State of the geolocated IP address. |
 | `required_count` | Required pieces of evidence according to your account’s regional settings. |
 | `updated` | ISO date at which the object was updated. |
 
