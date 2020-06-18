@@ -17,7 +17,7 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 | `currency` | 3-letter ISO 4217 local currency code. |
 | `ip_address` | The same IP address coming from the `ip_address` query params, or the geolocated IP address if none was provided. |
 | `local_name` | Localized name of the VAT identification number. |
-| `member_state` | Boolean indicating whether the country is an EU member state. |
+| `member_state` | Boolean indicating whether the country is an EU Member State. |
 | `reduced_rates` | Array of reduced VAT rates in percent. |
 | `standard_rate` | Standard VAT rate in percent. |
 | `vat_abbreviation` | Abbreviation of `vat_local_name`. |
@@ -27,7 +27,7 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 
 Retrieves all VAT rate objects, including standard VAT rates and VAT rates for digital products.
 
-You can filter the results by a 2-letter ISO country code to only obtain the rate object for a specific member state. This method requires that you request a customer’s country code yourself.
+You can filter the results by a 2-letter ISO country code to only obtain the rate object for a specific country.
 
 ### Request
 
@@ -44,7 +44,8 @@ curl -X GET https://api.vatstack.com/v1/rates \
 | --- | --- |
 | `limit` <small>optional</small> | A limit on the number of object to be returned. Limit can be 1 to 100, and the default is 20. |
 | `page` <small>optional</small> | Integer for the current page. |
-| `country_code` <small>optional</small> | Filter results by a 2-letter ISO country code of the EU member state. If found, the returned response will only list the rate object for that country code. |
+| `country_code` <small>optional</small> | Filter results by a 2-letter ISO country code. |
+| `member_state` <small>optional</small> | Boolean to filter results by EU Member State. |
 
 ### Response
 
