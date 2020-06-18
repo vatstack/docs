@@ -49,7 +49,7 @@ curl -X GET https://api.vatstack.com/v1/rates \
 
 ### Response
 
-VAT rates successfully obtained with price object for 100 EUR.
+VAT rates successfully obtained for `member_state` set to `true`.
 
 ```
 {
