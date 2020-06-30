@@ -2,11 +2,21 @@
 
 You must [collect two pieces of non-contradictory evidence](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32013R1042) that confirm your customer’s location and keep them on file for 10 years. Therefore measures must be put in place to capture the necessary information that will help to establish where the telecommunications, broadcasting and electronic (TBE) service has been consumed.
 
+### VAT E-commerce Package
+
 If you’re a business in the EU with less than 100,000 EUR in cross-border sales of TBE annually, then you only need to [collect one piece of non-contradictory customer location evidence](https://ec.europa.eu/taxation_customs/business/vat/digital-single-market-modernising-vat-cross-border-ecommerce_en).
 
 EU businesses with less than 10,000 EUR in cross-border sales of TBE annually can opt out of VAT MOSS altogether. In such cases, you are not obliged to collect any piece of evidence. Set your VAT MOSS opt-in status in your dashboard’s [regional settings](https://dashboard.vatstack.com/regions) accordingly.
 
-Our [EU VAT guide for digital subscription businesses](https://vatstack.com/articles/eu-vat-guide-for-digital-subscription-businesses) has more information about the thresholds.
+Our article about [EU VAT rules for digital businesses](https://vatstack.com/articles/eu-vat-guide-for-digital-subscription-businesses) has more information on the thresholds.
+
+### Types of Evidences
+
+You can store the following pieces of location evidence:
+
+- Location of the customer’s bank
+- Billing address of the customer (valid only if provided by a 3rd party)
+- IP address of the device used by the customer
 
 All evidence must be gathered from a third party, such as the bank or IP address, and not from the customer directly. After all, the customer could twist the facts to evade paying tax. Nevertheless, we let you store the customer’s full billing address but encourage you to always store the bank’s address and IP address preferentially.
 

@@ -1,6 +1,6 @@
 # Rates
 
-Keep the VAT rates of your application up-to-date by querying this endpoint regularly. This ensures that your invoice states the correct VAT across EU Member States. We have also started to add countries outside the EU and will keep them updated.
+Keep the rates of your application up-to-date with a regular VAT rate lookup. This ensures that your invoice states the correct VAT across EU Member States. We have also started to add countries outside the EU and will keep them updated.
 
 VAT rates can change irregularly as governments adapt to new circumstances. We track such announcements closely and store scheduled changes in our database. Any such change will take effect at exactly midnight local time of the respective country.
 

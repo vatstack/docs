@@ -2,9 +2,17 @@
 
 Supplies are transactions of telecommunications, broadcasting and electronic (TBE) services. To document pieces of evidence for the place of supply, you can attach [evidence objects](https://vatstack.com/docs/evidences) to a supply object. Supplies are also used to automatically generate a quarterly tax report with currency conversion at official exchange rates.
 
-If, for example, your supplies are transacted in USD but your reporting currency is in EUR, we will convert each amount accurately at the applicable [exchange rate published by the European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html). We currently support local EU VAT and VAT MOSS tax reports.
+If, for example, your supplies are transacted in USD but your reporting currency is in EUR, we will convert each amount accurately at the applicable [exchange rate published by the European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html). We currently support domestic VAT, VAT MOSS report and EC Sales List (ESL).
 
-You can create supply objects programmatically via this API endpoint. Integrations with popular payment providers follow in due course and according to demand. Please write to [team@vatstack.com](mailto:team@vatstack.com) if you require a particular integration. We’re open to discussing your needs.
+### Evidence Sufficiency
+
+We help you ensure that the evidences attached to your supply object are sufficient. The `evidence_status` indicates whether they are `sufficient` or `insufficient` to prove the place of supply as stated in `country_code`. The status depends on the number of evidences you have configured in your tax treatment settings.
+
+### Synchronize With Integrations
+
+You can create supply objects programmatically via this API endpoint or via integrations such as [Stripe](https://vatstack.com/docs/stripe).
+
+Integrations with other popular payment providers follow in due course and according to demand. Please write to [team@vatstack.com](mailto:team@vatstack.com) if you require a particular integration. We’re open to discussing your needs.
 
 ## The Supply Object
 
