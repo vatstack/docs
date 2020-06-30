@@ -4,7 +4,7 @@ Validate your business customer’s VAT number against official government serve
 
 This API endpoint validates VAT numbers intelligently despite government service downtimes and ensures compliant record-keeping for your tax office:
 
-- Every response of type `eu_vat` includes a consultation number given by VIES. The consultation number is a unique reference identifier and is an official piece of evidence used to show to tax administrations of a member state that you have rightfully validated a given VAT number on a given date.
+- Every response of type `eu_moss` and `eu_vat` includes a consultation number given by VIES. The consultation number is a unique reference identifier and is an official piece of evidence used to show to tax administrations of a member state that you have rightfully validated a given VAT number on a given date.
 - Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable.
 - [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `MS_UNAVAILABLE` or `SERVICE_UNAVAILABLE`. See error codes section for more information.
 - Vatstack proactively notifies your server as soon as a validation request was successfully processed and a result obtained from official government servers. This means that you don’t have to query our API anymore and can instead listen to webhook events.
@@ -24,7 +24,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
-| `type` | Type of VAT. One of `au_gst` (Australia), `eu_vat` (EU VIES), `ch_vat` (Switzerland) or `no_vat` (Norway). |
+| `type` | Type of VAT number. One of `au_gst` (Australia), `eu_moss` (EU MOSS), `eu_vat` (VIES), `ch_vat` (Switzerland) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT number contained in `query` is in a valid format. |
@@ -47,7 +47,7 @@ curl -X POST https://api.vatstack.com/v1/validations \
 
 | Parameter | Description |
 | --- | --- |
-| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
+| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
 | `query` <small>required</small> | VAT number that you want to validate. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
@@ -193,12 +193,13 @@ Validation object successfully retrieved.
 
 ## VAT Number Formats
 
-Vatstack currently validates VAT numbers in real-time for the following regions:
+Vatstack currently validates the following types of VAT numbers in real-time:
 
-- Australia (`au_gst`)
-- European Union (`eu_vat`)
-- Norway (`no_vat`)
-- Switzerland (`ch_vat`)
+- **Australia**: Australian Business Number (`au_gst`)
+- **EU MOSS ID**: MOSS ID of non-EU businesses (`eu_moss`)
+- **EU VAT ID**: VAT ID of EU businesses (`eu_vat`)
+- **Norway**: Organization Number (`no_vat`)
+- **Switzerland**: Business Identification Number (`ch_vat`)
 
 If you have a specific requirement, we’re happy to integrate more government services. Below section explains how you can submit validation requests for each region.
 
@@ -210,7 +211,9 @@ Validate an ABN with Vatstack by providing 11 digits in your request. Vatstack w
 
 ### European Union (VIES)
 
-The [EU VAT number format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the EU member state, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
+The API validates both the VAT ID of EU businesses and the MOSS ID of non-EU businesses. The [VAT ID format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the EU member state, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
+
+The MOSS ID format starts with ‘EU’, followed by 9 digits. The country code of non-EU businesses cannot be determined and is therefore shown as `null`. Example **EU999999999**.
 
 ### Norway
 
