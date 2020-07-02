@@ -4,7 +4,7 @@ Validate your business customer’s VAT number against official government serve
 
 This API endpoint validates VAT numbers intelligently despite government service downtimes and ensures compliant record-keeping for your tax office:
 
-- Every response of type `eu_moss` and `eu_vat` includes a consultation number given by VIES. The consultation number is a unique reference identifier and is an official piece of evidence used to show to tax administrations of a member state that you have rightfully validated a given VAT number on a given date.
+- Every response of type `eu_vat` includes a consultation number given by VIES. The consultation number is a unique reference identifier and is an official piece of evidence used to show to tax administrations of a Member State that you have rightfully validated a given VAT number on a given date.
 - Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable.
 - [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `MS_UNAVAILABLE` or `SERVICE_UNAVAILABLE`. See error codes section for more information.
 - Vatstack proactively notifies your server as soon as a validation request was successfully processed and a result obtained from official government servers. This means that you don’t have to query our API anymore and can instead listen to webhook events.
@@ -19,7 +19,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `code` | In the event of an error, this field will contain the error code. See the list of error codes below and their explanation. |
 | `company_address` | Address of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
 | `company_name` | Name of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
-| `consultation_number` | If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a member state that you have checked a VAT number at the `requested` date, and obtained a validation result. |
+| `consultation_number` | If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT number at the `requested` date, and obtained a validation result. |
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
@@ -211,7 +211,7 @@ Validate an ABN with Vatstack by providing 11 digits in your request. Vatstack w
 
 ### European Union (VIES)
 
-The API validates both the VAT ID of EU businesses and the MOSS ID of non-EU businesses. The [VAT ID format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the EU member state, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
+The API validates both the VAT ID of EU businesses and the MOSS ID of non-EU businesses. The [VAT ID format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the Member State, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
 
 The MOSS ID format starts with ‘EU’, followed by 9 digits. The country code of non-EU businesses cannot be determined and is therefore shown as `null`. Example **EU999999999**.
 
@@ -245,9 +245,9 @@ The payload contains the validation object which you can further process on your
 | `INVALID_INPUT` | VAT number is invalid. |
 | `INVALID_REQUESTER_INFO` | Supplier VAT number is invalid. Verify that the VAT number entered in your account information is correct. |
 | `INVALID_RESPONSE` | The response obtained is invalid and cannot be processed. |
-| `MS_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests for this member state service has been reached. Try to resubmit your request in a few moments. |
-| `MS_UNAVAILABLE` | A member state service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
+| `MS_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests for this Member State service has been reached. Try to resubmit your request in a few moments. |
+| `MS_UNAVAILABLE` | A Member State service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `SERVER_BUSY` | The validation service is currently busy. Try to resubmit your request in a few moments. |
 | `SERVICE_UNAVAILABLE` | The validation service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
-| `TIMEOUT` | Member state service could not be reached in time. Try to resubmit your request in a few moments. |
+| `TIMEOUT` | Member State service could not be reached in time. Try to resubmit your request in a few moments. |
 | `VAT_BLOCKED` | VAT number has been blocked and cannot be queried. |
