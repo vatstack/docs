@@ -61,9 +61,9 @@ VAT rates successfully obtained for `member_state` set to `true`.
         "audiobook": 10,
         "broadcasting": 10,
         "ebook": 10,
-        "eperiodical": 10
+        "eperiodical": 10,
         "eservice": 20,
-        "telecommunication": 20,
+        "telecommunication": 20
       },
       "country_code": "AT",
       "country_name": "Austria",
@@ -118,9 +118,9 @@ VAT rate successfully obtained.
     "audiobook": 10,
     "broadcasting": 10,
     "ebook": 10,
-    "eperiodical": 10
+    "eperiodical": 10,
     "eservice": 20,
-    "telecommunication": 20,
+    "telecommunication": 20
   },
   "country_code": "AT",
   "country_name": "Austria",
