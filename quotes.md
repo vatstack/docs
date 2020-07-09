@@ -61,7 +61,7 @@ curl -X POST https://api.vatstack.com/v1/quotes \
 | --- | --- |
 | `amount` <small>required</small> | Amount **in cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues. |
 | `country_code` <small>optional</small> | 2-letter ISO country code. If provided, the `ip_address` parameter will be ignored. |
-| `category` <small>optional</small> | Digital products category used for calculation. Supports `audiobook`, `ebook` and `eperiodical`. |
+| `category` <small>optional</small> | Digital products category used for calculation. Supports `audiobook`, `broadcasting`, `ebook`, `eperiodical`, `eservice` and `telecommunication`. |
 | `ip_address` <small>optional</small> | IP address to geolocate the VAT rate for. If neither IP address nor `country_code` is provided, it will be automatically determined from the request. |
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
 | `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
