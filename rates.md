@@ -11,7 +11,7 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 | Key | Description |
 | --- | --- |
 | `abbreviation` | Abbreviation of `local_name`. |
-| `categories` | Categories relevant for digital products. Supports `audiobook`, `ebook` and `eperiodical`. Default to `standard_rate` if your digital product category is not available or contact us. |
+| `categories` | Categories relevant for digital products. Supports `audiobook`, `broadcasting`, `ebook`, `eperiodical`, `eservice` and `telecommunication`. Default to `standard_rate` if your digital product category is not available or contact us. |
 | `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `currency` | 3-letter ISO 4217 local currency code. |
@@ -58,9 +58,12 @@ VAT rates successfully obtained for `member_state` set to `true`.
     {
       "abbreviation": "UID",
       "categories": {
-        "audiobook": 20,
-        "ebook": 20,
-        "eperiodical": 20
+        "audiobook": 10,
+        "broadcasting": 10,
+        "ebook": 10,
+        "eperiodical": 10
+        "eservice": 20,
+        "telecommunication": 20,
       },
       "country_code": "AT",
       "country_name": "Austria",
@@ -110,22 +113,25 @@ VAT rate successfully obtained.
 
 ```
 {
-  "abbreviation": "USt-IdNr.",
+  "abbreviation": "UID",
   "categories": {
-    "audiobook": 7,
-    "ebook": 19,
-    "eperiodical": 19
+    "audiobook": 10,
+    "broadcasting": 10,
+    "ebook": 10,
+    "eperiodical": 10
+    "eservice": 20,
+    "telecommunication": 20,
   },
-  "country_code": "DE",
-  "country_name": "Germany",
+  "country_code": "AT",
+  "country_name": "Austria",
   "currency": "EUR",
-  "ip_address": "81.169.181.179",
   "local_name": "Umsatzsteuer-Identifikationsnummer",
   "member_state": true,
   "reduced_rates": [
-    7
+    10,
+    13
   ],
-  "standard_rate": 19,
+  "standard_rate": 20,
   "vat_abbreviation": "MwSt.",
   "vat_local_name": "Mehrwertsteuer"
 }
