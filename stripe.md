@@ -6,9 +6,20 @@ Once your accounts are connected, a paid invoice on Stripe will automatically cr
 
 As the entire process is heavily automated with complex business logic, we recommend to monitor incoming transactions for accuracy in the beginning and let us know if you experience any inconsistencies.
 
-## Place of Supply
+## Determining the Tax Rate
 
-The place of supply is determined with the help of indications found in a Stripe invoice. Since an evidence object is created simultaneously with a supply, we use the following fields from it and in this priority:
+Generally speaking, tax rates are determined with the best knowledge available. We therefore recommend that you hydrate Stripe’s invoices with as much data as possible beforehand. This includes attaching
+
+- a tax rate applied to the invoice or to the invoice line item and
+- a tax ID of your customer for potential reverse charge (read more below).
+
+Vatstack will take this data into consideration when determining the applicable VAT rate, and whether the charged amount is inclusive or exclusive of VAT.
+
+If none of this information is found in an invoice, we assume the VAT-inclusive standard rate of the place of supply. You would then remit VAT from the amount you have charged your customer. If a wrong tax rate was found, it is also overwritten with the applicable standard rate to ensure accurate tax declarations.
+
+## Establishing the Place of Supply
+
+The place of supply is established with the help of indications found in a Stripe invoice. Since an evidence object is created simultaneously with a supply, we use the following fields from it and in this priority:
 
 - `bank_address.country_code`: Obtained from the Stripe charge.
 - `ip_address.country_code`: Obtained from metadata (see below).
