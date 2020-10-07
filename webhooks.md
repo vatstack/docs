@@ -12,23 +12,22 @@ The POST request sent to your endpoint generally contains the event name and its
 {
   "name": "validation.succeeded",
   "payload": {
-    "id": "5d9f548b5b407ab2b9d12623",
-    "code": "MS_UNAVAILABLE",
-    "company_address": null,
-    "company_name": null,
-    "consultation_number": null,
+    "id": "5d1ded3128ca7a842aaf5ed4",
+    "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
+    "company_name": "GOOGLE IRELAND LIMITED",
+    "consultation_number": "WAPIAAAAW21qsOHW",
     "country_code": "IE",
     "query": "IE6388047V",
     "type": "eu_vat",
-    "valid": null,
+    "valid": true,
     "valid_format": true,
-    "vat_number": null,
-    "requested": "2019-10-10T15:55:55.660Z",
-    "created": "2019-10-10T15:55:55.661Z",
-    "updated": "2019-10-10T15:55:55.661Z"
+    "vat_number": "6388047V",
+    "requested": "2019-07-04T00:00:00.000Z",
+    "created": "2019-07-04T12:12:33.322Z",
+    "updated": "2019-07-04T12:12:33.322Z"
   },
-  "created": "2019-10-10T15:55:55.661Z",
-  "updated": "2019-10-10T15:55:55.661Z"
+  "created": "2019-07-04T12:12:33.322Z",
+  "updated": "2019-07-04T12:12:33.322Z"
 }
 ```
 
