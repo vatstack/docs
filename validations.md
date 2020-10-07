@@ -229,12 +229,13 @@ Provide a VAT number with a ‘CHE’ prefix in your request, and Vatstack will 
 
 ## Webhook Events
 
-Vatstack will proactively notify your server as soon as a validation request was successfully processed and a result obtained from official government services. This means that you don’t have to query our API anymore and can instead listen to webhook events.
+Vatstack can proactively notify your server as soon as a validation request was processed. This means that you don’t have to query our API anymore and can instead listen to webhook events. You could then reach out to the customer to rectify the situation or adjust your invoice for the next charge.
 
-The payload contains the validation object which you can further process on your end. Configure at which endpoint they should be sent to in your dashboard. You could then reach out to the customer to rectify the situation or adjust your invoice for the next charge.
+See our [webhooks documentation](https://vatstack.com/docs/webhooks) for more information.
 
 | Event | Description |
 | --- | --- |
+| `validation.failed` | Response from VIES could not be obtained even after several attempts. |
 | `validation.succeeded` | Received response from VIES. Check whether the VAT number is valid or not using the `valid` field. |
 
 ## Error Codes

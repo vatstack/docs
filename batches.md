@@ -284,3 +284,14 @@ Batch object successfully deleted.
   "deleted": true
 }
 ```
+
+## Webhook Events
+
+Vatstack can proactively notify your server as soon as a batch was processed. This means that you don’t have to query our API anymore and can instead listen to webhook events.
+
+See our [webhooks documentation](https://vatstack.com/docs/webhooks) for more information.
+
+| Event | Description |
+| --- | --- |
+| `batch.failed` | Batch process could not be completed due to an internal error. |
+| `batch.succeeded` | All queries in the batch process were successfully checked. |
