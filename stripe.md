@@ -21,9 +21,9 @@ If none of this information is found in an invoice, we assume the VAT-inclusive 
 
 The place of supply is established with the help of indications found in a Stripe invoice. Since an evidence object is created simultaneously with a supply, we use the following fields from it and in this priority:
 
+- `billing_address.country_code`: Obtained from the customer’s address or shipping address.
 - `bank_address.country_code`: Obtained from the Stripe charge.
 - `ip_address.country_code`: Obtained from metadata (see below).
-- `billing_address.country_code`: Obtained from the customer’s address or shipping address.
 
 ## Customer’s Tax ID
 
