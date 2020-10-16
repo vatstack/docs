@@ -19,7 +19,7 @@ If none of this information is found in an invoice, we assume the VAT-inclusive 
 
 ## Establishing the Place of Supply
 
-The place of supply is established with the help of indications found in a Stripe invoice. Since an evidence object is created simultaneously with a supply, we use the following fields from it and in this priority:
+An [evidence object](https://vatstack.com/docs/evidences) is also created simultaneously with a supply using indications found in the Stripe [invoice](https://stripe.com/docs/api/invoices) and [charge](https://stripe.com/docs/api/charges). The place of supply is established primarily by the most supporting evidences. If no majority could be determined. the following fields are used and in this priority:
 
 - `billing_address.country_code`: Obtained from the customer’s address or shipping address.
 - `bank_address.country_code`: Obtained from the Stripe charge.
