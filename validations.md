@@ -19,6 +19,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `code` | In the event of an error, this field will contain the error code. See the list of error codes below and their explanation. |
 | `company_address` | Address of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
 | `company_name` | Name of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
+| `company_type` | Type of the company entity returned by the respective government service (where available). |
 | `consultation_number` | If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT number at the `requested` date, and obtained a validation result. |
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
@@ -67,6 +68,7 @@ Validation object successfully created.
   "id": "5d1ded3128ca7a842aaf5ed4",
   "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
   "company_name": "GOOGLE IRELAND LIMITED",
+  "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
@@ -90,6 +92,7 @@ Validation request was accepted and will resume asynchronously.
   "code": "MS_UNAVAILABLE",
   "company_address": null,
   "company_name": null,
+  "company_type": null,
   "consultation_number": null,
   "country_code": "IE",
   "query": "IE6388047V",
@@ -140,6 +143,7 @@ Validation objects successfully retrieved.
       "id": "5d1ded3128ca7a842aaf5ed4",
       "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
       "company_name": "GOOGLE IRELAND LIMITED",
+      "company_type": null,
       "consultation_number": "WAPIAAAAW21qsOHW",
       "country_code": "IE",
       "query": "IE6388047V",
@@ -178,6 +182,7 @@ Validation object successfully retrieved.
   "id": "5d1ded3128ca7a842aaf5ed4",
   "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
   "company_name": "GOOGLE IRELAND LIMITED",
+  "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
