@@ -126,18 +126,6 @@ Batch objects successfully retrieved. Example includes one valid query and one i
       "scheduled": null,
       "status": "pending",
       "succeeded_count": 1,
-      "validations": {
-        "has_more": false,
-        "validations": [
-          {
-            "query": "DE811128135",
-            "valid": null,
-            "valid_format": true
-          },
-          ...
-        ],
-        "validations_count": 2
-      },
       "created": "2019-10-21T19:25:05.501Z",
       "updated": "2019-10-21T19:43:12.348Z"
     },
