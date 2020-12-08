@@ -226,7 +226,7 @@ The MOSS ID format starts with ‘EU’, followed by 9 digits. The country code 
 
 UK’s VAT number format is a 9 or 12 digit number. It may or may not be preceded by ‘GB’ as a remnant of being part of the EU where all registration numbers are preceded by their respective country codes. Example **123456789**.
 
-Vatstack removes the prefix from your query and only stores the number. We ask you to mind this when querying your validation history.
+Learn more about [UK VAT number validations](https://vatstack.com/articles/uk-vat-number-validation) in our announcement.
 
 ### Norway
 
