@@ -16,6 +16,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | Key | Description |
 | --- | --- |
 | `id` | Unique identifier for the object. |
+| `active` | Boolean indicating whether the company exists and is active. Use `valid` to check whether the business is also VAT-registered. |
 | `code` | In the event of an error, this field will contain the error code. See the list of error codes below and their explanation. |
 | `company_address` | Address of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
 | `company_name` | Name of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
@@ -24,7 +25,6 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
-| `registered` | Boolean indicating whether the company exists. Use `valid` to check whether the business is also VAT-registered. |
 | `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
 | `type` | Type of VAT number. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
@@ -67,13 +67,13 @@ Validation object successfully created.
 ```
 {
   "id": "5d1ded3128ca7a842aaf5ed4",
+  "active": true,
   "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
   "company_name": "GOOGLE IRELAND LIMITED",
   "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
-  "registered": true,
   "type": "eu_vat",
   "valid": true,
   "valid_format": true,
@@ -91,6 +91,7 @@ Validation request was accepted and will resume asynchronously.
 ```
 {
   "id": "5d9f548b5b407ab2b9d12623",
+  "active": true,
   "code": "MS_UNAVAILABLE",
   "company_address": null,
   "company_name": null,
@@ -98,7 +99,6 @@ Validation request was accepted and will resume asynchronously.
   "consultation_number": null,
   "country_code": "IE",
   "query": "IE6388047V",
-  "registered": true,
   "type": "eu_vat",
   "valid": null,
   "valid_format": true,
@@ -145,13 +145,13 @@ Validation objects successfully retrieved.
   "validations": [
     {
       "id": "5d1ded3128ca7a842aaf5ed4",
+      "active": true,
       "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
       "company_name": "GOOGLE IRELAND LIMITED",
       "company_type": null,
       "consultation_number": "WAPIAAAAW21qsOHW",
       "country_code": "IE",
       "query": "IE6388047V",
-      "registered": true,
       "type": "eu_vat",
       "valid": true,
       "valid_format": true,
@@ -185,13 +185,13 @@ Validation object successfully retrieved.
 ```
 {
   "id": "5d1ded3128ca7a842aaf5ed4",
+  "active": true,
   "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
   "company_name": "GOOGLE IRELAND LIMITED",
   "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
-  "registered": true,
   "type": "eu_vat",
   "valid": true,
   "valid_format": true,
