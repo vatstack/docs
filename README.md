@@ -31,6 +31,7 @@ All results are returned in industry-standard JSON format which can be easily re
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
+  "registered": true,
   "type": "eu_vat",
   "valid": true,
   "valid_format": true,

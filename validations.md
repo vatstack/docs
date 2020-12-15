@@ -24,6 +24,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
+| `registered` | Boolean indicating whether the company exists. Use `valid` to check whether the business is also VAT-registered. |
 | `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
 | `type` | Type of VAT number. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
@@ -72,6 +73,7 @@ Validation object successfully created.
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
+  "registered": true,
   "type": "eu_vat",
   "valid": true,
   "valid_format": true,
@@ -96,6 +98,7 @@ Validation request was accepted and will resume asynchronously.
   "consultation_number": null,
   "country_code": "IE",
   "query": "IE6388047V",
+  "registered": true,
   "type": "eu_vat",
   "valid": null,
   "valid_format": true,
@@ -148,6 +151,7 @@ Validation objects successfully retrieved.
       "consultation_number": "WAPIAAAAW21qsOHW",
       "country_code": "IE",
       "query": "IE6388047V",
+      "registered": true,
       "type": "eu_vat",
       "valid": true,
       "valid_format": true,
@@ -187,6 +191,7 @@ Validation object successfully retrieved.
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
   "query": "IE6388047V",
+  "registered": true,
   "type": "eu_vat",
   "valid": true,
   "valid_format": true,
