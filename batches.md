@@ -2,7 +2,7 @@
 
 Batch mass VAT number validations for due dates. Add VAT numbers in bulk or append VAT numbers incrementally to your existing batch process, then start it whenever required.
 
-You can use batches to perform VAT number validations in bulk. Once you start the validation process, Vatstack will automatically create [validation objects](https://vatstack.com/docs/validations) for each query you had added to the batch. Batches can be used and maintained flexibly according to your business requirements:
+You can use batches to perform VAT number validations in bulk. It’s also possible to [run a batch from your dashboard](https://vatstack.com/articles/vat-number-mass-validation-in-bulk). Once you start the validation process, Vatstack will automatically create [validation objects](https://vatstack.com/docs/validations) for each query you had added to the batch. Batches can be used and maintained flexibly according to your business requirements:
 
 ### Start the validation process immediately:
 
