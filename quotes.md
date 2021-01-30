@@ -52,7 +52,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X POST https://api.vatstack.com/v1/quotes \
-     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "X-API-KEY: pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Body Parameters
@@ -122,7 +122,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/quotes \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -195,7 +195,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X GET https://api.vatstack.com/v1/quotes/:id \
-     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "X-API-KEY: pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response

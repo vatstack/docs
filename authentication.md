@@ -16,10 +16,10 @@ You can see that the request URI quickly becomes illegible. You can alternativel
 
 ## Public Key or Secret Key in Headers
 
-In your request’s headers, add a string to the `Authorization` key that containing the `Basic` method and your API key separated with a space. Example for your authorization header using a sample public key:
+Pass your API key into the `X-API-KEY` header. Example for your request using a sample public key:
 
 ```
-Authorization: 'Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
+"X-API-KEY": "pk_6c46e7d65bc2caccdbf48f4a9c2fcba7"
 ```
 
 This method can be convenient to globally declare an authorization header for your entire app. Supplying your API key in each query params will become redundant.

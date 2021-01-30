@@ -35,10 +35,10 @@ The POST request sent to your endpoint generally contains the event name and its
 
 ## Event Authorization
 
-Requests always contain an authorization header to prevent fraudulent requests from being processed on your server. The authorization header is a string containing the `Basic` method and your secret key.
+Requests always contain an authorization header to prevent fraudulent requests from being processed on your server. The header includes a `X-API-KEY` key with your secret key.
 
 ```
-Authorization: 'Basic sk_c283fd6d793076603646b197c7cb0424'
+"X-API-KEY": "sk_c283fd6d793076603646b197c7cb0424"
 ```
 
 ## List of Webhook Events

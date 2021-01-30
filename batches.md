@@ -44,7 +44,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X POST https://api.vatstack.com/v1/batches \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -91,7 +91,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/batches \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -144,7 +144,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/batches/:id \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response
@@ -194,7 +194,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X PUT https://api.vatstack.com/v1/batches/:id \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -259,7 +259,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X DELETE https://api.vatstack.com/v1/batches/:id \
-     -H "Authorization: Basic sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response
