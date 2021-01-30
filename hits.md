@@ -27,7 +27,7 @@ This endpoint can be useful if you want to perform a quick check against your hi
 
 ```
 curl -X GET https://api.vatstack.com/v1/hits \
-     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response

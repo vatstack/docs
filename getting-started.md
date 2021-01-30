@@ -20,7 +20,7 @@ var amount = 10000
 axios.post('https://api.vatstack.com/v1/quotes', {
   amount: amount
 }, {
-  headers: { Authorization: `Credential ${ api_key }` }
+  headers: { Authorization: `Basic ${ api_key }` }
 })
 .then(function(result) {
   // Do something with result.data.
@@ -51,7 +51,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'amount=' . $amount);
 ​
 // Add key to header array.
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Credential ' . $api_key]);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic ' . $api_key]);
 ​
 $json = curl_exec($ch);
 ​
@@ -84,7 +84,7 @@ $.ajax({
   type: 'post',
   data: { amount: amount },
   dataType: 'json',
-  headers: { Authorization: `Credential ${ api_key }` },
+  headers: { Authorization: `Basic ${ api_key }` },
   success: function(result) {
     // Do something with result.data.
     console.log(result.data)

@@ -42,7 +42,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X POST https://api.vatstack.com/v1/validations \
-     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Body Parameters
@@ -119,7 +119,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X GET https://api.vatstack.com/v1/validations \
-     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Query Parameters
@@ -175,7 +175,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X GET https://api.vatstack.com/v1/validations/:id \
-     -H "Authorization: Credential pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "Authorization: Basic pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Response
