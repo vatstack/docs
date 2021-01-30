@@ -1,6 +1,6 @@
 # Introduction
 
-A suite of VAT APIs which let you validate VAT numbers with official government services, look up VAT rates by ISO country code and calculate price quotes compliant with official VAT rules.
+A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
 
 ## Introduction to the Vatstack API
 
