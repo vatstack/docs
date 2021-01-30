@@ -25,7 +25,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
-| `requested` | ISO date at which the validation request was originally performed. This is the request date returned by VIES and does not specify a time. |
+| `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
 | `type` | Type of VAT number. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
