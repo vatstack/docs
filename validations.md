@@ -91,7 +91,7 @@ Validation request was accepted and will resume asynchronously.
 ```
 {
   "id": "5d9f548b5b407ab2b9d12623",
-  "active": true,
+  "active": null,
   "code": "MS_UNAVAILABLE",
   "company_address": null,
   "company_name": null,

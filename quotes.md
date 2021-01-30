@@ -84,9 +84,11 @@ Quote object successfully created. Example includes a populated [validation obje
   "member_state": true,
   "validation": {
     "id": "5dc490ea73c1ce2f69628901",
+    "active": true,
     "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
     "company_name": "GOOGLE IRELAND LIMITED",
     "consultation_number": "WAPIAAAAW5H1hUQb",
+    "company_type": null,
     "country_code": "IE",
     "query": "IE6388047V",
     "type": "eu_vat",
@@ -152,8 +154,10 @@ Quote objects successfully retrieved.
       "member_state": true,
       "validation": {
         "id": "5dc490ea73c1ce2f69628901",
+        "active": true,
         "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
         "company_name": "GOOGLE IRELAND LIMITED",
+        "company_type": null,
         "consultation_number": "WAPIAAAAW5H1hUQb",
         "country_code": "IE",
         "query": "IE6388047V",
@@ -212,8 +216,10 @@ Quote object successfully retrieved.
   "member_state": true,
   "validation": {
     "id": "5dc490ea73c1ce2f69628901",
+    "active": true,
     "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
     "company_name": "GOOGLE IRELAND LIMITED",
+    "company_type": null,
     "consultation_number": "WAPIAAAAW5H1hUQb",
     "country_code": "IE",
     "query": "IE6388047V",

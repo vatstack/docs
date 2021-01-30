@@ -13,8 +13,10 @@ The POST request sent to your endpoint generally contains the event name and its
   "name": "validation.succeeded",
   "payload": {
     "id": "5d1ded3128ca7a842aaf5ed4",
+    "active": true,
     "company_address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4",
     "company_name": "GOOGLE IRELAND LIMITED",
+    "company_type": null,
     "consultation_number": "WAPIAAAAW21qsOHW",
     "country_code": "IE",
     "query": "IE6388047V",
