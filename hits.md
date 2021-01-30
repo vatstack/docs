@@ -10,10 +10,10 @@ The consumption is counted similarly with a [supply](https://vatstack.com/docs/s
 
 | Key | Description |
 | --- | --- |
-| `supplies.available` | Supplies remaining for the running month. |
+| `supplies.available` <small>deprecated</small> | Supplies remaining for the running month. |
 | `supplies.capacity` | Included supplies in the plan you’re subscribed to. |
 | `supplies.used` | Supplies created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
-| `validations.available` | Validations remaining for the running month. |
+| `validations.available` <small>deprecated</small> | Validations remaining for the running month. |
 | `validations.capacity` | Included validations in the plan you’re subscribed to. |
 | `validations.used` | Validations created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
 
