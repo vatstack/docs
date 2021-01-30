@@ -14,13 +14,13 @@ We will use [Axios](https://github.com/axios/axios) in order to perform requests
 const axios = require('axios')
 ​
 var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
-var amount = 10000
+var amount  = 10000
 ​
 // Create a quote request via HTTP POST.
 axios.post('https://api.vatstack.com/v1/quotes', {
   amount: amount
 }, {
-  headers: { Authorization: `Basic ${ api_key }` }
+  headers: { 'X-API-KEY': api_key }
 })
 .then(function(result) {
   // Do something with result.data.
@@ -38,7 +38,7 @@ The best practice to perform API requests with PHP is with its built-in cURL.
 
 ```
 $api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7';
-$amount = 10000;
+$amount  = 10000;
 ​
 // Initialize CURL.
 $ch = curl_init('https://api.vatstack.com/v1/quotes');
@@ -51,7 +51,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'amount=' . $amount);
 ​
 // Add key to header array.
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic ' . $api_key]);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['X-API-KEY: ' . $api_key]);
 ​
 $json = curl_exec($ch);
 ​
@@ -76,7 +76,7 @@ You have to link [jQuery](https://jquery.com/) either from a CDN or a self-hoste
 
 ```
 var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
-var amount = 10000
+var amount  = 10000
 ​
 // Perform an AJAX POST request.
 $.ajax({
@@ -84,7 +84,7 @@ $.ajax({
   type: 'post',
   data: { amount: amount },
   dataType: 'json',
-  headers: { Authorization: `Basic ${ api_key }` },
+  headers: { 'X-API-KEY': api_key },
   success: function(result) {
     // Do something with result.data.
     console.log(result.data)
