@@ -1,6 +1,6 @@
 # Stripe Integration
 
-Vatstack works seamlessly with your Stripe account. Note that integrations require a subscription plan **Small Business** or above.
+Vatstack works seamlessly with your Stripe account. Note that integrations require a subscription plan **Launch** or above.
 
 Once your accounts are connected, a paid invoice on Stripe will automatically create a [supply object](https://vatstack.com/docs/supplies) on Vatstack and an [evidence object](https://vatstack.com/docs/evidences) attached to it to prove the place of supply. Each invoice line item will create its own set of objects to accommodate for potentially varying VAT rates.
 
