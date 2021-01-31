@@ -12,10 +12,10 @@ The consumption is counted similarly with a [supply](https://vatstack.com/docs/s
 | --- | --- |
 | `supplies.available` <small>deprecated</small> | Supplies remaining for the running month. |
 | `supplies.capacity` | Included supplies in the plan you’re subscribed to. |
-| `supplies.used` | Supplies created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
+| `supplies.used` | Supplies created during the running month. Additional requests beyond `capacity` will be charged according to the plan you’re subscribed to. |
 | `validations.available` <small>deprecated</small> | Validations remaining for the running month. |
 | `validations.capacity` | Included validations in the plan you’re subscribed to. |
-| `validations.used` | Validations created during the running month. Additional requests will be charged according to the plan you’re subscribed to. |
+| `validations.used` | Validations created during the running month. Additional requests beyond `capacity` will be charged according to the plan you’re subscribed to. |
 
 ## Retrieve Hits
 
@@ -32,15 +32,15 @@ curl -X GET https://api.vatstack.com/v1/hits \
 
 ### Response
 
+Hits successfully retrieved.
+
 ```
 {
   "supplies": {
-    "available": 19,
     "capacity": 100,
     "used": 81
   },
   "validations": {
-    "available": 378,
     "capacity": 500,
     "used": 122
   }
