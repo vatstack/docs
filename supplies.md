@@ -298,6 +298,7 @@ curl -X PUT https://api.vatstack.com/v1/supplies/:id \
 | `name` <small>optional</small> | A custom field for the name of the customer. |
 | `notes` <small>optional</small> | A custom field for additional notes. |
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if the customer had validated a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
+| `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
 | `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quotes object](https://vatstack.com/docs/quotes) during checkout. |
 
 ### Response
