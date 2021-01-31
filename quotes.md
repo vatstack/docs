@@ -35,9 +35,9 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `member_state` | Boolean indicating whether `country_code` is an EU member state. |
 | `updated` | ISO date at which the object was updated. |
 | `validation` | Populated validation object if an ID is attached. You can attach a validation object with the `validation` body parameter in the POST request. Defaults to `null`. See [validation object](https://vatstack.com/docs/validations) for reference. |
+| `vat.abbreviation` | Abbreviation of `vat.local_name`. |
 | `vat.amount` | VAT amount in cents. |
 | `vat.inclusive` | Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay. |
-| `vat.abbreviation` | Abbreviation of `vat.local_name`. |
 | `vat.local_name` | Localized name of the VAT. |
 | `vat.rate` | VAT rate applied for the calculation. If `member_state` is `false`, the value will be `0`. |
 | `vat.rate_type` | Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`. |
