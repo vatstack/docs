@@ -23,7 +23,7 @@ The consumption is counted similarly with a [supply](https://vatstack.com/docs/s
 
 Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
 
-This endpoint can be useful if you want to perform a quick check against your hits count before initiating a VAT number validation request.
+This endpoint can be useful if you want to perform a quick check against your hits count before initiating an API request.
 
 ```
 curl -X GET https://api.vatstack.com/v1/hits \
