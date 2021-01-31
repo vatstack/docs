@@ -23,12 +23,13 @@ Integrations with other popular payment providers follow in due course and accor
 | `amount_refunded` | Amount in cents refunded back to the customer. |
 | `amount_total` | Total amount in cents charged in consideration of the `vat.inclusive` boolean. This is the amount that was actually charged the customer and is the difference between `amount` and `amount_refunded`. |
 | `country_code` | 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`. |
-| `currency` | 3-letter ISO 4217 currency code used to charge the `amount`. |
 | `created` | ISO date at which the object was created. |
+| `currency` | 3-letter ISO 4217 currency code used to charge the `amount`. |
 | `description` | An arbitrary string to describe the supplied item. Often useful for displaying to users. |
 | `evidence` | Populated evidence object if an ID is attached. You can attach an evidence object with the `evidence` body parameter in the POST request. Defaults to `null`. See [evidence object](https://vatstack.com/docs/evidences) for reference. |
 | `evidence_status` | Status of whether the attached evidence object sufficiently proves the place of supply established in `country_code`. Will be either `sufficient` or `insufficient`. |
 | `invoice_number` | A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering. |
+| `issued` | ISO date at which `invoice_number` was issued. |
 | `name` | A custom string for the name of the customer. |
 | `notes` | A custom string for additional notes. |
 | `updated` | ISO date at which the object was updated. |
@@ -66,7 +67,8 @@ curl -X POST https://api.vatstack.com/v1/supplies \
 | `name` <small>optional</small> | A custom string for the name of the customer. |
 | `notes` <small>optional</small> | A custom string for additional notes. |
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if the customer had validated a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
-| `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quotes object](https://vatstack.com/docs/quotes) during checkout. |
+| `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
+| `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quote object](https://vatstack.com/docs/quotes) during checkout. |
 
 ### Response
 
