@@ -11,11 +11,10 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 | Key | Description |
 | --- | --- |
 | `abbreviation` | Abbreviation of `local_name`. |
-| `categories` | Categories relevant for digital products. Supports `audiobook`, `broadcasting`, `ebook`, `eperiodical`, `eservice` and `telecommunication`. Default to `standard_rate` if your digital product category is not available or contact us. |
+| `categories` | Categories relevant for digital products. Object contains VAT specific to `audiobook`, `broadcasting`, `ebook`, `eperiodical`, `eservice` and `telecommunication`. |
 | `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `currency` | 3-letter ISO 4217 local currency code. |
-| `ip_address` | The same IP address coming from the `ip_address` query params, or the geolocated IP address if none was provided. |
 | `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether the country is an EU Member State. |
 | `reduced_rates` | Array of reduced VAT rates in percent. |
