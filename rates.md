@@ -41,10 +41,10 @@ curl -X GET https://api.vatstack.com/v1/rates \
 
 | Parameter | Description |
 | --- | --- |
-| `limit` <small>optional</small> | A limit on the number of object to be returned. Limit can be 1 to 100, and the default is 20. |
-| `page` <small>optional</small> | Integer for the current page. |
 | `country_code` <small>optional</small> | Filter results by a 2-letter ISO country code. |
+| `limit` <small>optional</small> | A limit on the number of object to be returned. Limit can be 1 to 100, and the default is 20. |
 | `member_state` <small>optional</small> | Boolean to filter results by EU Member State. |
+| `page` <small>optional</small> | Integer for the current page. |
 
 ### Response
 
