@@ -53,6 +53,7 @@ VAT rates successfully obtained for `member_state` set to `true`.
 ```
 {
   "has_more": false,
+  "rates_count": 27,
   "rates": [
     {
       "abbreviation": "UID",
@@ -78,8 +79,7 @@ VAT rates successfully obtained for `member_state` set to `true`.
       "vat_local_name": "Mehrwertsteuer"
     },
     ...
-  ],
-  "rates_count": 28
+  ]
 }
 ```
 
