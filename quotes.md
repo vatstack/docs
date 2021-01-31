@@ -27,20 +27,20 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `amount` | Amount in cents, as given in your request. |
 | `amount_total` | Total amount to be charged in consideration of the `vat.inclusive` boolean. This is the amount you should display to customers. |
 | `category` | Category of the digital product. Defaults to `null` if no category was specified in the request or if the category cannot be applied for the `country_code`. |
-| `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
+| `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `created` | ISO date at which the object was created. |
 | `ip_address` | The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided. |
 | `local_name` | Localized name of the VAT identification number. |
-| `member_state` | Boolean indicating whether the country is an EU member state. |
+| `member_state` | Boolean indicating whether `country_code` is an EU member state. |
+| `updated` | ISO date at which the object was updated. |
+| `validation` | Populated validation object if an ID is attached. You can attach a validation object with the `validation` body parameter in the POST request. Defaults to `null`. See [validation object](https://vatstack.com/docs/validations) for reference. |
 | `vat.amount` | VAT amount in cents. |
 | `vat.inclusive` | Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay. |
 | `vat.abbreviation` | Abbreviation of `vat.local_name`. |
 | `vat.local_name` | Localized name of the VAT. |
 | `vat.rate` | VAT rate applied for the calculation. If `member_state` is `false`, the value will be `0`. |
 | `vat.rate_type` | Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`. |
-| `updated` | ISO date at which the object was updated. |
-| `validation` | Populated validation object if an ID is attached. You can attach a validation object with the `validation` body parameter in the POST request. Defaults to `null`. See [validation object](https://vatstack.com/docs/validations) for reference. |
 
 ## Create a quote
 
