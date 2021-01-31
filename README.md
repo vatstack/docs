@@ -10,15 +10,17 @@ Familiarize yourself with the core concepts of the JSON (JavaScript Object Notat
 
 Using the POST method, you can perform requests and retrieve data using the GET method.
 
-## API Specifications
+## OpenAPI Specification (OAS)
 
-### Unique API Keys
+Vatstack supports the latest OpenAPI Specification (OAS) which defines a standard, programming language-agnostic interface description for REST APIs. We maintain a [dedicated repository](https://github.com/vatstack/openapi) to help you discover and understand the capabilities of Vatstack’s API.
+
+## Unique API Keys
 
 A unique public key and a unique secret key are assigned to you during registration. It is your gateway to interact with Vatstack’s API endpoints. Use your keys to authenticate all your requests using one of the [two documented authentication methods](https://vatstack.com/docs/authentication).
 
 The keys can be rolled to a newly generated one from within your dashboard. This can be useful in the event that one of your keys has been compromised. Please mind that resetting a key can break your application if it is not updated there at the same time. You can choose a rolling period to transition without disruption.
 
-### Sample API Response
+## Sample API Response
 
 All results are returned in industry-standard JSON format which can be easily read by your application. Here is a sample response from the `validations` POST endpoint:
 
