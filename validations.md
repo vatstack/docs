@@ -171,7 +171,7 @@ Retrieves a validation object by the **:id** path parameter.
 
 ### Request
 
-Authorize with <span class="badge badge-success">Public Key</span> <span class="badge badge-warning">Secret Key</span>
+Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/validations/:id \
