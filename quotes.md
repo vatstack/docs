@@ -30,6 +30,7 @@ You don’t have to replicate the same business logic in the frontend and the ba
 | `country_code` | 2-letter ISO country code. |
 | `country_name` | Corresponding English name of `country_code`. |
 | `created` | ISO date at which the object was created. |
+| `integrations` | Array of objects which are hydrated if you connect Vatstack with a payment processor. It can include the applicable `tax_rate_id` of your payment processor. |
 | `ip_address` | The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided. |
 | `local_name` | Localized name of the VAT identification number. |
 | `member_state` | Boolean indicating whether `country_code` is an EU member state. |
@@ -79,6 +80,12 @@ Quote object successfully created. Example includes a populated [validation obje
   "category": null,
   "country_code": "IE",
   "country_name": "Ireland",
+  "integrations": [
+    {
+      "provider": "stripe",
+      "tax_rate_id": "txr_1ITsZmE4GGQvLhGdNCYVfm7M"
+    }
+  ],
   "ip_address": "92.251.255.11",
   "local_name": "Value added tax identification number",
   "member_state": true,
@@ -149,6 +156,12 @@ Quote objects successfully retrieved.
       "category": null,
       "country_code": "IE",
       "country_name": "Ireland",
+      "integrations": [
+        {
+          "provider": "stripe",
+          "tax_rate_id": "txr_1ITsZmE4GGQvLhGdNCYVfm7M"
+        }
+      ],
       "ip_address": "92.251.255.11",
       "local_name": "Value added tax identification number",
       "member_state": true,
@@ -211,6 +224,12 @@ Quote object successfully retrieved.
   "category": null,
   "country_code": "IE",
   "country_name": "Ireland",
+  "integrations": [
+    {
+      "provider": "stripe",
+      "tax_rate_id": "txr_1ITsZmE4GGQvLhGdNCYVfm7M"
+    }
+  ],
   "ip_address": "92.251.255.11",
   "local_name": "Value added tax identification number",
   "member_state": true,
