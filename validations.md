@@ -1,10 +1,10 @@
 # Validations
 
-Validate your business customer’s VAT number against official government servers in real-time. The API asynchronously validates VAT numbers for you if government services experience downtime.
+Validate your business customer’s VAT identification number against official government servers in real-time. The API asynchronously validates VAT IDs for you if government services experience downtime.
 
-This API endpoint validates VAT numbers intelligently despite government service downtimes and ensures compliant record-keeping for your tax office:
+This API endpoint validates VAT IDs intelligently despite government service downtimes and ensures compliant record-keeping for your tax office:
 
-- Every response of type `eu_vat` and `gb_vat` includes a consultation number given by VIES and HMRC, respectively. The consultation number is a unique reference identifier and is an official piece of evidence used to show your tax office that you have rightfully validated a given VAT number on a given date.
+- Every response of type `eu_vat` and `gb_vat` includes a consultation number given by VIES and HMRC, respectively. The consultation number is a unique reference identifier and is an official piece of evidence used to show your tax office that you have rightfully validated a given VAT identification number on a given date.
 - Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable.
 - [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `MS_UNAVAILABLE` or `SERVICE_UNAVAILABLE`. See error codes section for more information.
 - Vatstack proactively notifies your server as soon as a validation request was successfully processed and a result obtained from official government servers. This means that you don’t have to query our API anymore and can instead listen to webhook events.
@@ -18,19 +18,19 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `id` | Unique identifier for the object. |
 | `active` | Boolean indicating whether the company exists and is active. Use `valid` to check whether the business is also VAT-registered. |
 | `code` | In the event of an error, this field will contain the error code. See the list of error codes below and their explanation. |
-| `company_address` | Address of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
-| `company_name` | Name of the company the VAT number is associated with. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
-| `company_type` | Type of the company entity returned by the respective government service (where available). |
-| `consultation_number` | If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT number at the `requested` date, and obtained a validation result. |
-| `country_code` | 2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`. |
+| `company_address` | Address of the registered business. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
+| `company_name` | Name of the registered business. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
+| `company_type` | Type of the business entity returned by the respective government service (where available). |
+| `consultation_number` | If you save your own VAT ID in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT ID at the `requested` date, and obtained a validation result. |
+| `country_code` | 2-letter ISO country code. Note that while Greek VAT IDs contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
-| `type` | Type of VAT number. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
+| `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
-| `valid_format` | Boolean indicating whether the VAT number contained in `query` is in a valid format. |
-| `vat_number` | VAT number extracted from your query without the country code. |
+| `valid_format` | Boolean indicating whether the VAT ID contained in `query` is in a valid format. |
+| `vat_number` | VAT ID number extracted from your query without the country code. |
 
 ## Create a Validation
 
@@ -49,8 +49,8 @@ curl -X POST https://api.vatstack.com/v1/validations \
 
 | Parameter | Description |
 | --- | --- |
-| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT number given. |
-| `query` <small>required</small> | VAT number that you want to validate. |
+| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT ID given. |
+| `query` <small>required</small> | VAT ID that you want to validate. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
 
@@ -129,7 +129,7 @@ curl -X GET https://api.vatstack.com/v1/validations \
 | `batch` <small>optional</small> | Show only objects that belong to a batch with the given identifier. |
 | `limit` <small>optional</small> | A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20. |
 | `page` <small>optional</small> | Integer for the current page. |
-| `query` <small>optional</small> | The VAT number you want to search in the `query` field of your records. |
+| `query` <small>optional</small> | The VAT ID you want to search in the `query` field of your records. |
 | `requested_since` <small>optional</small> | Show only objects where the `requested` date is this date or later. Format `YYYY-MM-DD`. |
 | `requested_until` <small>optional</small> | Show only objects where the `requested` date is this date or earlier. Format `YYYY-MM-DD`. |
 | `type` <small>optional</small> | Show only objects of specified type field. One of `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. |
@@ -202,9 +202,9 @@ Validation object successfully retrieved.
 }
 ```
 
-## VAT Number Formats
+## VAT ID Formats
 
-Vatstack currently validates the following types of VAT numbers in real-time:
+Vatstack currently validates the following types of VAT identification numbers in real-time:
 
 - **Australia**: Australian Business Number (`au_gst`)
 - **EU MOSS ID**: MOSS ID of non-EU businesses (`eu_moss`)
@@ -213,7 +213,7 @@ Vatstack currently validates the following types of VAT numbers in real-time:
 - **Norway**: Organization Number (`no_vat`)
 - **Switzerland**: Business Identification Number (`ch_vat`)
 
-If you have a specific requirement, we’re happy to integrate more government services. Below section explains how you can submit validation requests for each region.
+If you are looking to test VAT IDs before deploying for production, refer to our [testing documentation](https://vatstack.com/docs/testing). Below section explains how you can submit validation requests for each region.
 
 ### Australia
 
@@ -229,7 +229,7 @@ The MOSS ID format starts with ‘EU’, followed by 9 digits. The country code 
 
 ### United Kingdom
 
-UK’s VAT number format is a 9 or 12 digit number. It may or may not be preceded by ‘GB’ as a remnant of being part of the EU where all registration numbers are preceded by their respective country codes. Example **123456789**.
+UK’s VAT ID format is a 9 or 12 digit number. It may or may not be preceded by ‘GB’ as a remnant of being part of the EU where all registration numbers are preceded by their respective country codes. Example **123456789**.
 
 Learn more about [UK VAT number validations](https://vatstack.com/articles/uk-vat-number-validation) in our announcement.
 
@@ -237,13 +237,13 @@ Learn more about [UK VAT number validations](https://vatstack.com/articles/uk-va
 
 Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. The organization number has 9 digits. Example **999999999MVA**.
 
-Vatstack detects a Norwegian VAT number by its suffix ‘MVA’ in your request and validates it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
+Vatstack detects a Norwegian VAT ID by its suffix ‘MVA’ in your request and validates it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
 
 ### Switzerland
 
 Swiss number formats are based on the Swiss UID. It starts with ‘CHE’, followed by 9 digits, and either ends with ‘MWST’, ‘TVA’ or ‘IVA’ depending on the part of Switzerland a business is registered in. Example **CHE-123.456.789 MWST**.
 
-Provide a VAT number with a ‘CHE’ prefix in your request, and Vatstack will automatically validate it against the official [UID Register](https://www.uid.admin.ch/Search.aspx?lang=en). Learn more about [Swiss VAT number validations](https://vatstack.com/articles/switzerland-vat-number-validation) in our announcement.
+Provide a VAT ID with a ‘CHE’ prefix in your request, and Vatstack will automatically validate it against the official [UID Register](https://www.uid.admin.ch/Search.aspx?lang=en). Learn more about [Swiss VAT number validations](https://vatstack.com/articles/switzerland-vat-number-validation) in our announcement.
 
 ## Webhook Events
 
@@ -254,19 +254,19 @@ See our [webhooks documentation](https://vatstack.com/docs/webhooks) for more in
 | Event | Description |
 | --- | --- |
 | `validation.failed` | Response from VIES could not be obtained even after several attempts. |
-| `validation.succeeded` | Received response from VIES. Check whether the VAT number is valid or not using the `valid` field. |
+| `validation.succeeded` | Received response from VIES. Check whether the VAT ID is valid or not using the `valid` field. |
 
 ## Error Codes
 
 | Code | Description |
 | --- | --- |
 | `GLOBAL_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests has been reached. Try to resubmit your request in a few moments. |
-| `INVALID_INPUT` | VAT number is invalid. |
-| `INVALID_REQUESTER_INFO` | Supplier VAT number is invalid. Verify that the VAT number entered in your account information is correct. |
+| `INVALID_INPUT` | VAT ID is invalid. |
+| `INVALID_REQUESTER_INFO` | Supplier VAT ID is invalid. Verify that the VAT ID entered in your account information is correct. |
 | `INVALID_RESPONSE` | The response obtained is invalid and cannot be processed. |
 | `MS_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests for this Member State service has been reached. Try to resubmit your request in a few moments. |
 | `MS_UNAVAILABLE` | A Member State service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `SERVER_BUSY` | The validation service is currently busy. Try to resubmit your request in a few moments. |
 | `SERVICE_UNAVAILABLE` | The validation service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `TIMEOUT` | Member State service could not be reached in time. Try to resubmit your request in a few moments. |
-| `VAT_BLOCKED` | VAT number has been blocked and cannot be queried. |
+| `VAT_BLOCKED` | VAT ID has been blocked and cannot be queried. |
