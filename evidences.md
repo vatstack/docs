@@ -54,7 +54,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X POST https://api.vatstack.com/v1/evidences \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -70,6 +70,8 @@ curl -X POST https://api.vatstack.com/v1/evidences \
 | `billing_address.postal_code` <small>optional</small> | Postal code of the customer’s billing address. |
 | `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `ip_address.label` <small>optional</small> | IP address of the customer at the time of supply. We will automatically geolocate this IP address and hydrate the other fields. |
+
+Note that `bank_address`, `billing_address` and `ip_address` should be sent as objects with nested fields.
 
 ### Response
 
@@ -113,7 +115,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/evidences \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -172,7 +174,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/evidences/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response
@@ -217,7 +219,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X PUT https://api.vatstack.com/v1/evidences/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -233,6 +235,8 @@ curl -X PUT https://api.vatstack.com/v1/evidences/:id \
 | `billing_address.postal_code` <small>optional</small> | Postal code of the customer’s billing address. |
 | `billing_address.state` <small>optional</small> | State of the customer’s billing address. |
 | `ip_address.label` <small>optional</small> | IP address of the customer at the time of supply. We will automatically geolocate this IP address and hydrate the other fields. |
+
+Note that `bank_address`, `billing_address` and `ip_address` should be sent as objects with nested fields.
 
 ### Response
 

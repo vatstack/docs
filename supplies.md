@@ -49,7 +49,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X POST https://api.vatstack.com/v1/supplies \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -69,6 +69,8 @@ curl -X POST https://api.vatstack.com/v1/supplies \
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if the customer had validated a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
 | `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
 | `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quote object](https://vatstack.com/docs/quotes) during checkout. |
+
+Note that `vat` should be sent as object with nested fields.
 
 ### Response
 
@@ -132,7 +134,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/supplies \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -215,7 +217,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/supplies/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response
@@ -280,7 +282,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X PUT https://api.vatstack.com/v1/supplies/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Body Parameters
@@ -300,6 +302,8 @@ curl -X PUT https://api.vatstack.com/v1/supplies/:id \
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if the customer had validated a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
 | `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
 | `vat.rate` <small>required</small> | VAT rate must be either the `standard_rate` or one of the `reduced_rates` in the [rate object](https://vatstack.com/docs/rates) of `country_code`. If an invalid VAT rate is provided, it is automatically replaced with the `standard_rate`. The recommended way is to use the VAT rate determined by a previously generated [quotes object](https://vatstack.com/docs/quotes) during checkout. |
+
+Note that `vat` should be sent as object with nested fields.
 
 ### Response
 
@@ -363,7 +367,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X DELETE https://api.vatstack.com/v1/supplies/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response

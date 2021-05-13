@@ -53,7 +53,7 @@ Authorize with <span class="badge badge-success">Public Key</span> <span class="
 
 ```
 curl -X POST https://api.vatstack.com/v1/quotes \
-     -H "X-API-KEY: pk_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
+     -H "X-API-KEY: pk_live_6c46e7d65bc2caccdbf48f4a9c2fcba7" \
 ```
 
 ### Body Parameters
@@ -66,6 +66,8 @@ curl -X POST https://api.vatstack.com/v1/quotes \
 | `ip_address` <small>optional</small> | IP address to geolocate the VAT rate for. If neither IP address nor `country_code` is provided, it will be automatically determined from the request. |
 | `validation` <small>optional</small> | Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its `valid` value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating. |
 | `vat.inclusive` <small>optional</small> | Boolean for whether the resulting VAT amount should be calculated inclusive or exclusive of VAT. Defaults to `false`. All other `vat` fields will be hydrated for you. |
+
+Note that `vat` should be sent as object with nested fields.
 
 ### Response
 
@@ -129,7 +131,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/quotes \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Query Parameters
@@ -208,7 +210,7 @@ Authorize with <span class="badge badge-warning">Secret Key</span>
 
 ```
 curl -X GET https://api.vatstack.com/v1/quotes/:id \
-     -H "X-API-KEY: sk_c283fd6d793076603646b197c7cb0424" \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
 ```
 
 ### Response

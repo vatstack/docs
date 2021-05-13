@@ -13,7 +13,7 @@ We will use [Axios](https://github.com/axios/axios) in order to perform requests
 ```
 const axios = require('axios')
 ​
-var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
+var api_key = 'pk_live_6c46e7d65bc2caccdbf48f4a9c2fcba7'
 var amount  = 10000
 ​
 // Create a quote request via HTTP POST.
@@ -37,7 +37,7 @@ axios.post('https://api.vatstack.com/v1/quotes', {
 The best practice to perform API requests with PHP is with its built-in cURL.
 
 ```
-$api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7';
+$api_key = 'pk_live_6c46e7d65bc2caccdbf48f4a9c2fcba7';
 $amount  = 10000;
 ​
 // Initialize CURL.
@@ -75,7 +75,7 @@ curl_close($ch);
 You have to link [jQuery](https://jquery.com/) either from a CDN or a self-hosted source.
 
 ```
-var api_key = 'pk_6c46e7d65bc2caccdbf48f4a9c2fcba7'
+var api_key = 'pk_live_6c46e7d65bc2caccdbf48f4a9c2fcba7'
 var amount  = 10000
 ​
 // Perform an AJAX POST request.
