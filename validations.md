@@ -26,7 +26,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `created` | ISO date at which the object was created. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
-| `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU MOSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
+| `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU OSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT ID contained in `query` is in a valid format. |
@@ -207,7 +207,7 @@ Validation object successfully retrieved.
 Vatstack currently validates the following types of VAT identification numbers in real-time:
 
 - **Australia**: Australian Business Number (`au_gst`)
-- **EU MOSS ID**: MOSS ID of non-EU businesses (`eu_moss`)
+- **EU OSS ID**: OSS ID of non-EU businesses (`eu_moss`)
 - **EU VAT ID**: VAT ID of EU businesses (`eu_vat`)
 - **United Kingdom**: VAT ID of UK businesses (`gb_vat`)
 - **Norway**: Organization Number (`no_vat`)
@@ -223,9 +223,9 @@ Validate an ABN with Vatstack by providing 11 digits in your request. Vatstack w
 
 ### European Union (VIES)
 
-The API validates both the VAT ID of EU businesses and the MOSS ID of non-EU businesses. The [VAT ID format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the Member State, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
+The API validates both the VAT ID of EU businesses and the OSS ID of non-EU businesses. The [VAT ID format](https://ec.europa.eu/taxation_customs/vies/faq.html#item_11) starts with the country code of the Member State, followed by 8 to 12 digits or characters. Note that the country code is a two-letter [ISO 3166 alpha-2](https://www.iso.org/iso-3166-country-codes.html), except for Greece for which the abbreviation is ‘EL’. Example **EL999999999**. Learn more about the [benefits of validating VAT numbers with Vatstack](https://vatstack.com/articles/how-to-check-and-validate-eu-vat-numbers).
 
-The MOSS ID format starts with ‘EU’, followed by 9 digits. The country code of non-EU businesses cannot be determined and is therefore shown as `null`. Example **EU999999999**.
+The OSS ID format starts with ‘EU’, followed by 9 digits. The country code of non-EU businesses cannot be determined and is therefore shown as `null`. Example **EU999999999**.
 
 ### United Kingdom
 

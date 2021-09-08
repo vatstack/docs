@@ -2,7 +2,7 @@
 
 Supplies are transactions of telecommunications, broadcasting and electronic (TBE) services. To document pieces of evidence for the place of supply, you can attach [evidence objects](https://vatstack.com/docs/evidences) to a supply object. Supplies are also used to automatically generate a quarterly tax report with currency conversion at official exchange rates.
 
-If, for example, your supplies are transacted in USD but your reporting currency is in EUR, we will convert each amount accurately at the applicable [exchange rate published by the European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html). We currently support domestic VAT, VAT MOSS report and EC Sales List (ESL).
+If, for example, your supplies are transacted in USD but your reporting currency is in EUR, we will convert each amount accurately at the applicable [exchange rate published by the European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html). We currently support domestic VAT, VAT OSS report and EC Sales List (ESL).
 
 ### Evidence Sufficiency
 

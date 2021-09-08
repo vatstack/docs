@@ -206,7 +206,7 @@ curl -X PUT https://api.vatstack.com/v1/batches/:id \
 | `queries` <small>optional</small> | Array of VAT numbers to be added while considering the `mode`. |
 | `status` <small>optional</small> | Set it to `scheduled` once you want to schedule the validation process with the queries provided. It’s possible to add queries and change the status in one go. |
 
-This method is especially useful if you want to gradually append new VAT numbers over time, for example, towards an upcoming submission deadline for your VAT MOSS return. Simply add a `queries` array to your request body to add new VAT numbers to the batch.
+This method is especially useful if you want to gradually append new VAT numbers over time, for example, towards an upcoming submission deadline for your VAT OSS return. Simply add a `queries` array to your request body to add new VAT numbers to the batch.
 
 Duplicates will be purged and invalid VAT numbers ignored automatically for you. You don’t have to check whether or not a VAT number already exists in the batch.
 

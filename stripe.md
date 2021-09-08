@@ -29,7 +29,7 @@ An [evidence object](https://vatstack.com/docs/evidences) is also created simult
 
 If a tax ID was found for the Stripe customer, a [validation object](https://vatstack.com/docs/validations) is also created on top and attached to the supply object. A valid tax ID will result in reverse charge for your B2B supply in jurisdictions where such a mechanism exists.
 
-In case the tax ID is invalid or expired, we cannot apply the reverse charge mechanism and will apply the VAT rate of the place of supply. It is then considered a B2C supply and you’ll find it in your VAT MOSS report.
+In case the tax ID is invalid or expired, we cannot apply the reverse charge mechanism and will apply the VAT rate of the place of supply. It is then considered a B2C supply and you’ll find it in your VAT OSS report.
 
 To save you from consuming duplicate validation hits, we query your validation records of the past 28 days prior to creating a new validation object. This follows a similar logic as suggested for a [custom implementation for re-validations](https://vatstack.com/articles/how-to-automate-vat-number-checks-before-invoice-charges).
 

@@ -6,7 +6,7 @@ You must [collect two pieces of non-contradictory evidence](https://eur-lex.euro
 
 If you’re a business in the EU with less than 100,000 EUR in cross-border sales of TBE annually, then you only need to [collect one piece of non-contradictory customer location evidence](https://ec.europa.eu/taxation_customs/business/vat/digital-single-market-modernising-vat-cross-border-ecommerce_en).
 
-EU businesses with less than 10,000 EUR in cross-border sales of TBE annually can opt out of VAT MOSS altogether. In such cases, you are not obliged to collect any piece of evidence. Set your VAT MOSS opt-in status in your dashboard’s [regional settings](https://dashboard.vatstack.com/regions) accordingly.
+EU businesses with less than 10,000 EUR in cross-border sales of TBE annually can opt out of VAT OSS altogether. In such cases, you are not obliged to collect any piece of evidence. Set your VAT OSS opt-in status in your dashboard’s [regional settings](https://dashboard.vatstack.com/regions) accordingly.
 
 Our article about [EU VAT rules for digital businesses](https://vatstack.com/articles/eu-vat-guide-for-digital-subscription-businesses) has more information on the thresholds.
 

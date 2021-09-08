@@ -87,7 +87,7 @@ VAT rates successfully obtained for `member_state` set to `true`.
 
 Retrieves a geolocated VAT rate by IP address.
 
-While you can let customers choose the country they reside in, it may result in fraudulent data. It is best practice to geolocate the customer with their IP address, as the IP address counts as your tax evidence for VAT MOSS returns.
+While you can let customers choose the country they reside in, it may result in fraudulent data. It is best practice to geolocate the customer with their IP address, as the IP address counts as your tax evidence for VAT OSS returns.
 
 You can leave out the IP address in your query and Vatstack will automatically use the IP address coming from the request. Leaving out the IP address can be useful if the request originates from a front-end application.
 
