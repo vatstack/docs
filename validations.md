@@ -202,6 +202,30 @@ Validation object successfully retrieved.
 }
 ```
 
+## Delete a Validation
+
+Deletes a validation object by the **:id** path parameter. Note that validation objects with the `eu_vat` type can only be deleted after 24 hours.
+
+### Request
+
+Authorize with <span class="badge badge-warning">Secret Key</span>
+
+```
+curl -X DELETE https://api.vatstack.com/v1/validations/:id \
+     -H "X-API-KEY: sk_live_c283fd6d793076603646b197c7cb0424" \
+```
+
+### Response
+
+Validation object successfully deleted.
+
+```
+{
+  "id": "5d1ded3128ca7a842aaf5ed4",
+  "deleted": true
+}
+```
+
 ## VAT ID Formats
 
 Vatstack currently validates the following types of VAT identification numbers in real-time:
