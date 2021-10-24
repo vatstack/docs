@@ -24,6 +24,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `consultation_number` | If you save your own VAT ID in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT ID at the `requested` date, and obtained a validation result. |
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT IDs contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
+| `external_id` | String you can use to identify your customer with an external source. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
 | `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU OSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
@@ -73,6 +74,7 @@ Validation object successfully created.
   "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
+  "external_id": null,
   "query": "IE6388047V",
   "type": "eu_vat",
   "valid": true,
@@ -98,6 +100,7 @@ Validation request was accepted and will resume asynchronously.
   "company_type": null,
   "consultation_number": null,
   "country_code": "IE",
+  "external_id": null,
   "query": "IE6388047V",
   "type": "eu_vat",
   "valid": null,
@@ -127,6 +130,7 @@ curl -X GET https://api.vatstack.com/v1/validations \
 | Parameter | Description |
 | --- | --- |
 | `batch` <small>optional</small> | Show only objects that belong to a batch with the given identifier. |
+| `external_id` <small>optional</small> | Show only objects that match an external ID. |
 | `limit` <small>optional</small> | A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20. |
 | `page` <small>optional</small> | Integer for the current page. |
 | `query` <small>optional</small> | The VAT ID you want to search in the `query` field of your records. |
@@ -151,6 +155,7 @@ Validation objects successfully retrieved.
       "company_type": null,
       "consultation_number": "WAPIAAAAW21qsOHW",
       "country_code": "IE",
+      "external_id": null,
       "query": "IE6388047V",
       "type": "eu_vat",
       "valid": true,
@@ -191,6 +196,7 @@ Validation object successfully retrieved.
   "company_type": null,
   "consultation_number": "WAPIAAAAW21qsOHW",
   "country_code": "IE",
+  "external_id": null,
   "query": "IE6388047V",
   "type": "eu_vat",
   "valid": true,
