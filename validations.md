@@ -5,7 +5,7 @@ Validate your business customer’s VAT identification number against official g
 This API endpoint validates VAT IDs intelligently despite government service downtimes and ensures compliant record-keeping for your tax office:
 
 - Every response of type `eu_vat` and `gb_vat` includes a consultation number given by VIES and HMRC, respectively. The consultation number is a unique reference identifier and is an official piece of evidence used to show your tax office that you have rightfully validated a given VAT identification number on a given date.
-- Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable.
+- Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable. You can attach an `external_id` to identify and query your records easily.
 - [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `MS_UNAVAILABLE` or `SERVICE_UNAVAILABLE`. See error codes section for more information.
 - Vatstack proactively notifies your server as soon as a validation request was successfully processed and a result obtained from official government servers. This means that you don’t have to query our API anymore and can instead listen to webhook events.
 
