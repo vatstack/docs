@@ -50,6 +50,7 @@ curl -X POST https://api.vatstack.com/v1/validations \
 
 | Parameter | Description |
 | --- | --- |
+| `external_id` <small>optional</small> | Custom identifier of your customer to associate with this validation. |
 | `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT ID given. |
 | `query` <small>required</small> | VAT ID that you want to validate. |
 
