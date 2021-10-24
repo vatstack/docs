@@ -24,7 +24,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `consultation_number` | If you save your own VAT ID in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT ID at the `requested` date, and obtained a validation result. |
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT IDs contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
-| `external_id` | String you can use to identify your customer with an external source. |
+| `external_id` | String you can use to identify your customer at an external source. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
 | `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_moss` (EU OSS), `eu_vat` (VIES), `gb_vat` (United Kingdom) or `no_vat` (Norway). |
@@ -51,8 +51,8 @@ curl -X POST https://api.vatstack.com/v1/validations \
 | Parameter | Description |
 | --- | --- |
 | `external_id` <small>optional</small> | Custom identifier of your customer to associate with this validation. |
-| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT ID given. |
 | `query` <small>required</small> | VAT ID that you want to validate. |
+| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_moss`, `eu_vat`, `gb_vat` or `no_vat`. If not provided, the type is automatically determined based on the VAT ID given. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
 
