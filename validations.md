@@ -6,7 +6,7 @@ This API endpoint validates VAT IDs intelligently despite government service dow
 
 - Every response of type `eu_vat` and `gb_vat` includes a consultation number given by VIES and HMRC, respectively. The consultation number is a unique reference identifier and is an official piece of evidence used to show your tax office that you have rightfully validated a given VAT identification number on a given date.
 - Record-keeping can be especially useful for tax-filing purposes and if you are faced with an audit. It can also be a handy fallback for repeated charges with the same customers in the event that government services are temporarily unavailable. You can attach an `external_id` to identify and query your records easily.
-- [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `MS_UNAVAILABLE` or `SERVICE_UNAVAILABLE`. See error codes section for more information.
+- [​Government service downtimes](http://ec.europa.eu/taxation_customs/vies/help.html) happen regularly but will be a less blocking issue from now on. Validation requests are gracefully accepted and enter a schedule for automated re-validation. You can identify downtimes by a response’s error code `SERVICE_UNAVAILABLE`. See error codes section for more information.
 - Vatstack proactively notifies your server as soon as a validation request was successfully processed and a result obtained from official government servers. This means that you don’t have to query our API anymore and can instead listen to webhook events.
 
 To help you better understand how Vatstack’s endpoint stands out against other proxied solutions, read more about [how you can make best use of this endpoint](https://vatstack.com/articles/introducing-the-new-validations-endpoint).
@@ -21,7 +21,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `company_address` | Address of the registered business. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
 | `company_name` | Name of the registered business. Servers of Germany and Spain won’t return a value for privacy reasons and will default to `null`. |
 | `company_type` | Type of the business entity returned by the respective government service (where available). |
-| `consultation_number` | If you save your own VAT ID in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT ID at the `requested` date, and obtained a validation result. |
+| `consultation_number` | If you save your own VAT ID in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration in the EU and GB that you have checked a VAT ID at the `requested` date, and obtained a validation result. |
 | `country_code` | 2-letter ISO country code. Note that while Greek VAT IDs contain the `EL` country code, our response will return the ISO country code `GR`. |
 | `created` | ISO date at which the object was created. |
 | `external_id` | String you can use to identify your customer at an external source. |
@@ -95,7 +95,7 @@ Validation request was accepted and will resume asynchronously.
 {
   "id": "5d9f548b5b407ab2b9d12623",
   "active": null,
-  "code": "MS_UNAVAILABLE",
+  "code": "SERVICE_UNAVAILABLE",
   "company_address": null,
   "company_name": null,
   "company_type": null,
@@ -296,7 +296,7 @@ See our [webhooks documentation](https://vatstack.com/docs/webhooks) for more in
 | `INVALID_REQUESTER_INFO` | Supplier VAT ID is invalid. Verify that the VAT ID entered in your account information is correct. |
 | `INVALID_RESPONSE` | The response obtained is invalid and cannot be processed. |
 | `MS_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests for this Member State service has been reached. Try to resubmit your request in a few moments. |
-| `MS_UNAVAILABLE` | A Member State service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
+| `MS_UNAVAILABLE` | A Member State service (EU) is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `SERVER_BUSY` | The validation service is currently busy. Try to resubmit your request in a few moments. |
 | `SERVICE_UNAVAILABLE` | The validation service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `TIMEOUT` | Member State service could not be reached in time. Try to resubmit your request in a few moments. |
