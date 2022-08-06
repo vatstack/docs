@@ -2,7 +2,7 @@
 
 The data sent to your endpoint contains the event object which you can further process on your end. To add or edit an endpoint where the data should be sent to, navigate to **Webhooks** in your dashboard and click the **Change** button.
 
-In the modal dialog that appears, enter a URL that accepts HTTP POST requests and returns a status code 2XX (200-299). Additional query parameters appended to the URL are allowed. Also activate the events which you would like to receive at that endpoint.
+In the modal dialog that appears, enter a URL that accepts HTTP POST requests and returns a status code 2XX (200-299). Additional query parameters appended to the URL are allowed. Also activate the type of events which you would like to receive at that endpoint.
 
 ## Event Payload
 
