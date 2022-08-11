@@ -237,7 +237,7 @@ Validation object successfully deleted.
 
 Vatstack currently validates the following types of VAT identification numbers in real-time:
 
-- **Australia**: Australian Business Number (`au_gst`)
+- **Australia**: Business Number or Company Number (`au_gst`)
 - **European Union**: VAT ID of EU businesses (`eu_vat`)
 - **European Union (OSS)**: One-Stop Shop ID of non-EU businesses (`eu_oss_vat`)
 - **Norway**: Organization Number (`no_vat`)
@@ -251,7 +251,7 @@ If you are looking to test VAT IDs before deploying for production, refer to our
 
 [Australia’s GST number format](https://abr.business.gov.au/Help/AbnFormat) is a 11 digit number formed from a 9 digit unique identifier and 2 leading check digits. The identifier is issued to all entities registered in the [Australian Business Register (ABR)](https://abr.business.gov.au/). It is therefore also known as the Australian Business Number (ABN). Example **51 824 753 556**.
 
-Validate an ABN with Vatstack by providing 11 digits in your request. Vatstack will then automatically check against the ABR whether the business is registered for GST. Our announcement has more information about [ABN validation](https://vatstack.com/articles/australian-business-number-abn-validation).
+Validate an ABN, or ACN by providing 11 digits, or 9 digits, respectively in your request. Vatstack automatically checks against the ABR whether the business or company is registered for GST. Our announcement has more information about [ABN or ACN validation](https://vatstack.com/articles/australian-business-number-abn-validation).
 
 ### European Union (VIES)
 
@@ -266,10 +266,6 @@ Learn more about the [benefits of validating EU VAT numbers](https://vatstack.co
 Businesses which are registered in the Value Added Tax Register are required to add the letters ‘MVA’ as a suffix to their organization number. The organization number has 9 digits. Example **999999999MVA**.
 
 Vatstack detects a Norwegian VAT ID by its suffix ‘MVA’ in your request and validates it against the [Central Coordinating Register](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/). Our announcement has more details about [Norwegian VAT number validations](https://vatstack.com/articles/norway-vat-number-validation).
-
-### Singapore
-
-
 
 ### Switzerland
 
