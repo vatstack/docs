@@ -20,7 +20,7 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 | `reduced_rates` | Array of reduced VAT rates in percent. |
 | `standard_rate` | Standard VAT rate in percent. |
 | `state_code` | 2-letter US state code. Only required if `country_code` is `US`. |
-| `state_name` | Corresponding English name of `country_code`. |
+| `state_name` | Corresponding English name of `state_code`. |
 | `vat_abbreviation` | Abbreviation of `vat_local_name`. |
 | `vat_local_name` | Localized name of the VAT. |
 
