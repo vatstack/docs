@@ -19,6 +19,8 @@ If you want to quote VAT prices to your customer during checkout, we recommend t
 | `member_state` | Boolean indicating whether the country is an EU Member State. |
 | `reduced_rates` | Array of reduced VAT rates in percent. |
 | `standard_rate` | Standard VAT rate in percent. |
+| `state_code` | 2-letter US state code. Only required if `country_code` is `US`. |
+| `state_name` | Corresponding English name of `country_code`. |
 | `vat_abbreviation` | Abbreviation of `vat_local_name`. |
 | `vat_local_name` | Localized name of the VAT. |
 
@@ -45,6 +47,7 @@ curl -X GET https://api.vatstack.com/v1/rates \
 | `limit` <small>optional</small> | A limit on the number of object to be returned. Limit can be 1 to 100, and the default is 20. |
 | `member_state` <small>optional</small> | Boolean to filter results by EU Member State. Always `true` without a subscription. |
 | `page` <small>optional</small> | Integer for the current page. |
+| `state_code` <small>optional</small> | Filter results by a 2-letter US state code. Required if `country_code` is `US`. |
 
 ### Response
 
@@ -75,6 +78,8 @@ VAT rates successfully obtained for `member_state` set to `true`.
         13
       ],
       "standard_rate": 20,
+      "state_code": null,
+      "state_name": null,
       "vat_abbreviation": "MwSt.",
       "vat_local_name": "Mehrwertsteuer"
     },
@@ -131,6 +136,8 @@ VAT rate successfully obtained.
     13
   ],
   "standard_rate": 20,
+  "state_code": null,
+  "state_name": null,
   "vat_abbreviation": "MwSt.",
   "vat_local_name": "Mehrwertsteuer"
 }
