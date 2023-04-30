@@ -29,7 +29,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
 | `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_oss_vat` (EU OSS), `eu_vat` (VIES), `gb_vat` (United Kingdom), `no_vat` (Norway), or `sg_gst` (Singapore). |
 | `updated` | ISO date at which the object was updated. |
-| `valid` | Boolean indicating whether the `vat_number` is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you. |
+| `valid` | Boolean indicating whether the `vat_number` is registered for VAT OSS. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT ID contained in `query` is in a valid format. |
 | `vat_number` | VAT ID number extracted from your query without the country code. |
 
@@ -299,7 +299,6 @@ See our [webhooks](https://vatstack.com/docs/webhooks) reference for more inform
 | `INVALID_REQUESTER_INFO` | Supplier VAT ID is invalid. Verify that the VAT ID entered in your account information is correct. |
 | `INVALID_RESPONSE` | The response obtained is invalid and cannot be processed. |
 | `MS_MAX_CONCURRENT_REQ` | Maximum number of concurrent requests for this Member State service has been reached. Try to resubmit your request in a few moments. |
-| `MS_UNAVAILABLE` | A Member State service (EU) is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `SERVER_BUSY` | The validation service is currently busy. Try to resubmit your request in a few moments. |
 | `SERVICE_UNAVAILABLE` | The validation service is currently unavailable. Your request has been saved and Vatstack will retry validations. |
 | `TIMEOUT` | Member State service could not be reached in time. Try to resubmit your request in a few moments. |
