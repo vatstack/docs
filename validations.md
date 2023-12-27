@@ -27,7 +27,7 @@ To help you better understand how Vatstack’s endpoint stands out against other
 | `external_id` | String you can use to identify your customer at an external source. |
 | `query` | Your original query. |
 | `requested` | ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time. |
-| `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_oss_vat` (EU OSS), `eu_vat` (VIES), `gb_vat` (United Kingdom), `no_vat` (Norway), or `sg_gst` (Singapore). |
+| `type` | Type of VAT ID. One of `au_gst` (Australia), `ch_vat` (Switzerland), `eu_eori` (EU EORI), `eu_oss_vat` (EU OSS), `eu_vat` (VIES), `gb_eori` (GB EORI), `gb_vat` (Great Britain), `no_vat` (Norway), or `sg_gst` (Singapore). |
 | `updated` | ISO date at which the object was updated. |
 | `valid` | Boolean indicating whether the `vat_number` is registered for VAT OSS. If government services are down, the value will be `null` and re-checked automatically for you. |
 | `valid_format` | Boolean indicating whether the VAT ID contained in `query` is in a valid format. |
@@ -52,7 +52,7 @@ curl -X POST https://api.vatstack.com/v1/validations \
 | --- | --- |
 | `external_id` <small>optional</small> | Custom identifier of your customer to associate with this validation. |
 | `query` <small>required</small> | VAT ID that you want to validate. |
-| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_oss_vat`, `eu_vat`, `gb_vat`, `no_vat`, or `sg_gst`. If not provided, the type is automatically determined based on the VAT ID given. |
+| `type` <small>optional</small> | Restrict validation to either `au_gst`, `ch_vat`, `eu_eori`, `eu_oss_vat`, `eu_vat`, `gb_eori`, `gb_vat`, `no_vat`, or `sg_gst`. If not provided, the type is automatically determined based on the VAT ID given. |
 
 You may want to check `valid_format` on every request to give your customers feedback on their input. This boolean indicates whether your query was delivered in a valid format or not.
 
@@ -137,7 +137,7 @@ curl -X GET https://api.vatstack.com/v1/validations \
 | `query` <small>optional</small> | The VAT ID you want to search in the `query` field of your records. |
 | `requested_since` <small>optional</small> | Show only objects where the `requested` date is this date or later. Format `YYYY-MM-DD`. |
 | `requested_until` <small>optional</small> | Show only objects where the `requested` date is this date or earlier. Format `YYYY-MM-DD`. |
-| `type` <small>optional</small> | Show only objects of specified type field. One of `au_gst`, `ch_vat`, `eu_oss_vat`, `eu_vat`, `gb_vat`, `no_vat`, or `sg_gst`. |
+| `type` <small>optional</small> | Show only objects of specified type field. One of `au_gst`, `ch_vat`, `eu_eori`, `eu_oss_vat`, `eu_vat`, `gb_eori`, `gb_vat`, `no_vat`, or `sg_gst`. |
 
 ### Response
 
@@ -238,12 +238,12 @@ Validation object successfully deleted.
 Vatstack currently validates the following types of VAT identification numbers in real-time:
 
 - **Australia**: Business Number or Company Number (`au_gst`)
-- **European Union**: VAT ID of EU businesses (`eu_vat`)
+- **European Union**: VAT ID and EORI of EU businesses (`eu_vat` and `eu_eori`)
 - **European Union (OSS)**: One-Stop Shop ID of non-EU businesses (`eu_oss_vat`)
 - **Norway**: Organization Number (`no_vat`)
 - **Singapore**: GST Registration Number (`sg_gst`)
 - **Switzerland**: Business Identification Number (`ch_vat`)
-- **United Kingdom**: VAT ID of UK businesses (`gb_vat`)
+- **United Kingdom**: VAT ID and EORI of UK businesses (`gb_vat` and `gb_eori`)
 
 If you are looking to test VAT IDs before deploying for production, refer to our [testing documentation](https://vatstack.com/docs/testing). Below section explains how you can submit validation requests for each region.
 
