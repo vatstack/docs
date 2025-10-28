@@ -4,6 +4,8 @@ The data sent to your endpoint contains the event object which you can further p
 
 In the modal dialog that appears, enter a URL that accepts HTTP POST requests and returns a status code 2XX (200-299). Additional query parameters appended to the URL are allowed. Also activate the type of events which you would like to receive at that endpoint.
 
+If your endpoint is unresponsive or responds with an error after setup, we will re-attempt to send you the payload for one day.
+
 ## Event Payload
 
 The POST request sent to your endpoint generally contains the event name and its payload. Here is an example for a `validation.succeeded` event:

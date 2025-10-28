@@ -60,7 +60,7 @@ The validation result will be returned to you in the response. In the event that
 
 The `id` can be used to retrieve a validation status in future. Alternatively, you can obtain the status by checking the status in your dashboard, or listening to webhook events.
 
-Finalized validation results are posted to you via webhooks. Unfulfilled validation requests will be abandoned if no result could be obtained after 2 days.
+Finalized validation results are posted to you via [webhooks](https://vatstack.com/docs/webhooks).
 
 ### Response for Status Code 201 (Created)
 
